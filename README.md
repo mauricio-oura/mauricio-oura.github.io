@@ -1,4 +1,4 @@
-# Currículo Profissional - Maurício Oura
+# Currículo Profissional - Mauricio Oura
 
 Este repositório contém meu currículo profissional, focado em **Mapeamento de Processos**, **Dashboards** e **Automação**.
 
