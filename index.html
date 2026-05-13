@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mauricio Massao Oura | Administrador & Estrategista</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script src="imagens.js"></script>
     <style>
         :root {
             --primary-color: #2c3e50;
             --accent-color: #6e5494;
-            --text-light: #ecf0f1;
             --text-dark: #24292e;
             --bg-body: #f4f7f6;
+            --white: #ffffff;
         }
 
         body { 
@@ -20,160 +19,168 @@
             line-height: 1.6; 
             color: var(--text-dark); 
             margin: 0; 
+            padding: 0;
             background-color: var(--bg-body);
         }
 
-        .wrapper {
-            display: grid;
-            grid-template-columns: 300px 1fr;
-            min-height: 100vh;
+        /* Container Centralizado */
+        .cv-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: var(--white);
+            padding: 3rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
         }
 
-        aside {
-            background-color: var(--primary-color);
-            color: var(--text-light);
-            padding: 2rem 1.5rem;
-            text-align: center;
-        }
-
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 4px solid var(--accent-color);
-            margin-bottom: 1rem;
-            object-fit: cover;
-        }
-
-        .sidebar-section {
-            text-align: left;
-            margin-top: 2rem;
-            font-size: 0.9rem;
-        }
-
-        .sidebar-section h3 {
-            border-bottom: 1px solid var(--accent-color);
-            padding-bottom: 5px;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            font-size: 1rem;
-        }
-
-        main { padding: 2rem 3rem; }
-
+        /* Cabeçalho Centralizado */
         header {
+            text-align: center;
             border-bottom: 3px solid var(--accent-color);
             margin-bottom: 2rem;
-            padding-bottom: 1rem;
+            padding-bottom: 1.5rem;
         }
 
-        header h1 { margin: 0; font-size: 2.5rem; color: var(--primary-color); }
-        header p { margin: 5px 0 0; font-size: 1.2rem; font-weight: 500; color: var(--accent-color); }
+        header h1 { margin: 0; font-size: 2.8rem; color: var(--primary-color); }
+        header p.subtitle { margin: 5px 0 15px; font-size: 1.3rem; font-weight: 500; color: var(--accent-color); }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+        }
 
+        .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-info a:hover { color: var(--accent-color); }
+
+        /* Seções */
         section { margin-bottom: 2.5rem; }
-        h2 { color: var(--primary-color); display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
-        h2 i { color: var(--accent-color); }
+        
+        h2 { 
+            color: var(--primary-color); 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+            border-bottom: 1px solid #ddd; 
+            padding-bottom: 5px;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
+        h2 i { color: var(--accent-color); font-size: 1.2rem; }
+
+        /* Experiência */
         .timeline-item {
-            margin-bottom: 1.5rem;
-            padding-left: 1rem;
-            border-left: 2px solid var(--accent-color);
+            margin-bottom: 1.8rem;
         }
 
         .timeline-header {
             display: flex;
             justify-content: space-between;
             font-weight: bold;
-            color: #34495e;
+            color: var(--primary-color);
+            font-size: 1.1rem;
         }
 
-        .job-title { color: var(--accent-color); font-weight: 600; display: block; margin-bottom: 5px; }
+        .job-title { 
+            color: var(--accent-color); 
+            font-weight: 600; 
+            display: block; 
+            margin-bottom: 8px; 
+            font-style: italic;
+        }
 
-        .card {
-            background: white;
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            transition: transform 0.2s;
-            /* Ajustado para comportar imagens maiores */
+        /* Skills em Badges */
+        .skills-container {
             display: flex;
-            flex-direction: column; 
-            gap: 20px;
-        }
-        
-        .card:hover { transform: translateY(-3px); }
-
-        .card-content { flex: 1; }
-        
-        .card-images { 
-            display: flex; 
-            gap: 15px; 
-            flex-wrap: wrap; /* Permite que as imagens quebrem linha se necessário */
-            justify-content: center;
-        }
-
-        .project-img {
-            /* Tamanho 3x maior que o anterior (120x3 = 360 | 80x3 = 240) */
-            width: 360px;
-            height: 240px;
-            object-fit: cover;
-            border-radius: 6px;
-            border: 1px solid #ddd;
-            background-color: #eee;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
         }
 
         .badge {
-            background: #eee;
-            color: #333;
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            margin: 2px;
-            display: inline-block;
+            background: #f0f2f5;
+            color: var(--primary-color);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid #d1d8e0;
+            font-weight: 500;
         }
+
+        /* Cards de Projetos */
+        .card {
+            background: #fafbfc;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 5px solid var(--accent-color);
+            transition: background 0.3s;
+        }
+
+        .card:hover { background: #f1f4f8; }
+
+        .card h3 { margin-top: 0; color: var(--primary-color); }
 
         .btn {
             display: inline-block;
             background: var(--accent-color);
             color: white;
-            padding: 8px 15px;
+            padding: 8px 18px;
             text-decoration: none;
             border-radius: 5px;
             font-size: 0.85rem;
             margin-top: 10px;
+            transition: opacity 0.3s;
         }
 
+        .btn:hover { opacity: 0.9; }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #777;
+            font-size: 0.85rem;
+        }
+
+        /* Responsividade */
         @media (max-width: 768px) {
-            .wrapper { grid-template-columns: 1fr; }
-            main { padding: 1.5rem; }
-            .project-img { width: 100%; height: auto; }
+            .cv-container { margin: 1rem; padding: 1.5rem; }
+            .timeline-header { flex-direction: column; }
+            header h1 { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
 
-<div class="wrapper">
-    <aside>
-        <img src="https://github.com/mauriciooura-a11yke.png" alt="Mauricio Oura" class="profile-img">
+<div class="cv-container">
+    <header>
+        <h1>Mauricio Massao Oura</h1>
+        <p class="subtitle">Doutor em Administração | Especialista em Processos e Automação</p>
         
-        <div class="sidebar-section">
-            <h3>Contato</h3>
-            <p><i class="fas fa-envelope"></i> <a href="mailto:mauricio.oura@gmail.com" style="color: white; text-decoration: none;">mauricio.oura@gmail.com</a></p>
-            <p><i class="fab fa-github"></i> <a href="https://github.com/mauriciooura-a11yke" target="_blank" rel="noopener noreferrer" style="color: white; text-decoration: none;">mauriciooura-a11yke</a></p>
+        <div class="contact-info">
+            <a href="mailto:mauricio.oura@gmail.com"><i class="fas fa-envelope"></i> mauricio.oura@gmail.com</a>
+            <a href="https://github.com/mauriciooura-a11yke" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> github.com/mauriciooura-a11yke</a>
+            <span><i class="fas fa-globe"></i> Guarulhos, SP</span>
         </div>
+    </header>
 
-        <div class="sidebar-section">
-            <h3>Idiomas</h3>
-            <p>Inglês (Avançado)</p>
-            <p>Espanhol (Avançado)</p>
-            <p>Japonês (Intermediário)</p>
-            <p>Francês (Básico)</p>
-        </div>
+    <section>
+        <h2><i class="fas fa-user-tie"></i> Resumo Profissional</h2>
+        <p>Administrador e Servidor Público Federal com sólida experiência na estruturação de setores de TI, Importação e Secretarias Acadêmicas. Especialista em estratégia e gestão baseada em riscos, utilizo a tecnologia para transformar burocracia em fluxos eficientes e acessíveis.</p>
+    </section>
 
-        <div class="sidebar-section">
-            <h3>Hard Skills</h3>
+    <section>
+        <h2><i class="fas fa-tools"></i> Habilidades Estratégicas</h2>
+        <div class="skills-container">
             <span class="badge">Python + IA</span>
             <span class="badge">Google Data Studio / BI</span>
             <span class="badge">Google Apps Script + IA</span>
@@ -182,107 +189,77 @@
             <span class="badge">Sistema SEI!</span>
             <span class="badge">Joomla</span>
             <span class="badge">Linux</span>
+            <span class="badge">Inglês/Espanhol (Avançados)</span>
         </div>
-    </aside>
+    </section>
 
-    <main>
-        <header>
-            <h1>Mauricio Massao Oura</h1>
-            <p>Doutor em Administração | Especialista em Processos e Automação</p>
-        </header>
-
-        <section>
-            <h2><i class="fas fa-user-tie"></i> Resumo Profissional</h2>
-            <p>Administrador e Servidor Público Federal com sólida experiência na estruturação de setores de TI, Importação e Secretarias Acadêmicas. Especialista em estratégia e gestão baseada em riscos, utilizo a tecnologia para transformar burocracia em fluxos eficientes e acessíveis.</p>
-        </section>
-
-        <section>
-            <h2><i class="fas fa-briefcase"></i> Experiência Profissional</h2>
-            
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <span>UNIVERSIDADE FEDERAL DE SÃO PAULO - UNIFESP - CAMPUS GUARULHOS</span>
-                    <span>2018 - Atual</span>
-                </div>
-                <span class="job-title">Administrador / Chefe de TI / Chefe de Secretaria / Secretário de Programa de Pós-Graduação (PPG) </span>
-                <p>Implementou melhorias com foco em gestão de riscos. 
-                   Foi Coordenador do Observatório Institucional da Escola de Filosofia, Letras e Ciências Humanas (EFLCH).
-                   Atuou na chefia da Secretaria Integrada de Cursos e Pós-Graduação (SICAP-EFLCH). 
-                   Atualmente é Secretário do PPG em Educação e Bolsista de Apoio de TI no Programa Leitura e Escrita na Educação Infantil (ProLEEI) do Ministério da Educação.</p>
+    <section>
+        <h2><i class="fas fa-briefcase"></i> Experiência Profissional</h2>
+        
+        <div class="timeline-item">
+            <div class="timeline-header">
+                <span>UNIVERSIDADE FEDERAL DE SÃO PAULO - UNIFESP</span>
+                <span>2018 - Atual</span>
             </div>
+            <span class="job-title">Administrador / Chefe de TI / Chefe de Secretaria / Secretário de PPG</span>
+            <p>Implementou melhorias com foco em gestão de riscos. Foi Coordenador do Observatório Institucional da Escola de Filosofia, Letras e Ciências Humanas (EFLCH). Atuou na chefia da Secretaria Integrada de Cursos e Pós-Graduação (SICAP-EFLCH). Atualmente é Secretário do PPG em Educação e Bolsista de Apoio de TI no Programa Leitura e Escrita na Educação Infantil (ProLEEI) do Ministério da Educação.</p>
+        </div>
 
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <span>UNIVERSIDADE FEDERAL DO ABC - UFABC</span>
-                    <span>2010 - 2018</span>
-                </div>
-                <span class="job-title">Administrador / Chefe de Importação</span>
-                <p>Responsável pela redução de prazos e custos na área de importação. 
-                    Pioneiro na implementação da Gestão Baseada em Riscos na área de importação.</p>
+        <div class="timeline-item">
+            <div class="timeline-header">
+                <span>UNIVERSIDADE FEDERAL DO ABC - UFABC</span>
+                <span>2010 - 2018</span>
             </div>
+            <span class="job-title">Administrador / Chefe de Importação</span>
+            <p>Responsável pela redução de prazos e custos na área de importação. Pioneiro na implementação da Gestão Baseada em Riscos na área de importação.</p>
+        </div>
 
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <span>SENAC, UNIP, FACULDADES INTEGRADAS TORRICELLI</span>
-                    <span>2007 - 2015</span>
-                </div>
-                <span class="job-title">Professor</span>
-                <p>Ministrou disciplinas em cursos de Pós-Graduação e Graduação.</p>
+        <div class="timeline-item">
+            <div class="timeline-header">
+                <span>SENAC, UNIP, FACULDADES INTEGRADAS TORRICELLI</span>
+                <span>2007 - 2015</span>
             </div>
+            <span class="job-title">Professor Universitário</span>
+            <p>Ministrou disciplinas em cursos de Pós-Graduação e Graduação nas áreas de Comércio Exterior, Negociação e Gestão Estratégica.</p>
+        </div>
 
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <span>CIA. LILLA DE MÁQUINAS</span>
-                    <span>2001 - 2010</span>
-                </div>
-                <span class="job-title">Analista de Exportação Sênior</span>
-                <p>Trajetória sólida na área de exportação, atuando com cálculo de projetos, supervisão de faturamento.</p>
+        <div class="timeline-item">
+            <div class="timeline-header">
+                <span>CIA. LILLA DE MÁQUINAS</span>
+                <span>2001 - 2010</span>
             </div>
-        </section>
+            <span class="job-title">Analista de Exportação Sênior</span>
+            <p>Trajetória sólida na área de exportação, atuando com cálculo de projetos, supervisão de faturamento e prospecção internacional.</p>
+        </div>
+    </section>
 
-        <section>
-            <h2><i class="fas fa-project-diagram"></i> Projetos em Destaque</h2>
-            
-            <div class="card">
-                <div class="card-content">
-                    <h3>Portal do Conhecimento (PPGs - EFLCH)</h3>
-                    <p>Solução que organiza o conhecimento acadêmico. 
-                        Os dados de uma planilha Google são convertidos em JSON via Google Apps Script e transferidos para o GitHub com um clique.</p>
-                    <a href="https://mauriciooura-a11yke.github.io/ppgs-eflch/" class="btn" target="_blank" rel="noopener noreferrer">Explorar Projeto</a>
-                </div>
-                <div class="card-images">
-                    <img id="img-portal-1" src="" class="project-img" alt="Screenshot Portal 1">        
-                </div>
-            </div>
+    <section>
+        <h2><i class="fas fa-project-diagram"></i> Projetos em Destaque</h2>
+        
+        <div class="card">
+            <h3>Portal do Conhecimento (PPGs - EFLCH)</h3>
+            <p>Solução que organiza o conhecimento acadêmico. Os dados de uma planilha Google são convertidos em JSON via Google Apps Script e transferidos para o GitHub com um clique.</p>
+            <a href="https://mauriciooura-a11yke.github.io/ppgs-eflch/" class="btn" target="_blank" rel="noopener noreferrer">Visualizar Projeto</a>
+        </div>
 
-            <div class="card">
-                <div class="card-content">
-                    <h3>Painel de Execução Orçamentária</h3>
-                    <p>Integração de dados do Tesouro Gerencial com Looker Studio através de automação Python e Google Apps Script. 
-                        Os dados são atualizados e carregados diariamente sem intervenção humana.</p>
-                    <a href="https://datastudio.google.com/u/0/reporting/2d004452-b28a-4809-bb74-dc3df62db6fc/page/p_gtv8qv5ckd" class="btn" target="_blank" rel="noopener noreferrer">Acessar Painel</a>
-                </div>
-                <div class="card-images">
-                    <img id="img-painel-1" src="" class="project-img" alt="Dashboard Orçamento 1">
-                    <img id="img-painel-2" src="" class="project-img" alt="Dashboard Orçamento 2">
-                </div>
-            </div>
-        </section>
+        <div class="card">
+            <h3>Painel de Execução Orçamentária</h3>
+            <p>Integração de dados do Tesouro Gerencial com Looker Studio através de automação Python e Google Apps Script. Os dados são atualizados e carregados diariamente sem intervenção humana.</p>
+            <a href="https://datastudio.google.com/u/0/reporting/2d004452-b28a-4809-bb74-dc3df62db6fc/page/p_gtv8qv5ckd" class="btn" target="_blank" rel="noopener noreferrer">Acessar Dashboard</a>
+        </div>
+    </section>
 
-        <section>
-            <h2><i class="fas fa-graduation-cap"></i> Formação Acadêmica</h2>
-            <p><b>Doutorado em Administração</b> - Uninove, SP</p>
-            <p><b>Mestrado em Administração</b> - Uninove, SP</p>
-            <p><b>Bacharelado em Administração (Comércio Exterior)</b> - Torricelli, SP</p>
-            <p><b>Certificação em Liderança</b> - FGV/SP</p>
-        </section>
-    </main>
+    <section>
+        <h2><i class="fas fa-graduation-cap"></i> Formação Acadêmica</h2>
+        <p><b>Doutorado em Administração</b> - Uninove, SP</p>
+        <p><b>Mestrado em Administração</b> - Uninove, SP</p>
+        <p><b>Bacharelado em Administração (Comércio Exterior)</b> - Torricelli, SP</p>
+        <p><b>Certificação em Liderança Estratégica</b> - FGV/SP</p>
+    </section>
 </div>
 
 <footer>
-    <p style="text-align: center; padding: 1rem; color: #777; font-size: 0.8rem;">
-        &copy; 2026 Mauricio Massao Oura - Transformando dados em decisões.
-    </p>
+    <p>&copy; 2026 Mauricio Massao Oura - Transformando dados em decisões.</p>
 </footer>
 
 </body>
