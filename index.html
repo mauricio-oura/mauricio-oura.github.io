@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mauricio Massao Oura | Administrador & Estrategista</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="imagens.js"></script>
     <style>
         :root {
             --primary-color: #2c3e50;
@@ -95,8 +96,29 @@
             margin-bottom: 1rem;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
             transition: transform 0.2s;
+            /* Layout para imagens ao lado */
+            display: flex;
+            gap: 20px;
+            align-items: center;
         }
         .card:hover { transform: translateY(-3px); }
+
+        .card-content { flex: 1; }
+        
+        .card-images { 
+            display: flex; 
+            gap: 10px; 
+            flex-shrink: 0;
+        }
+
+        .project-img {
+            width: 120px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            background-color: #eee; /* Cor de fundo enquanto não carrega */
+        }
 
         .badge {
             background: #eee;
@@ -122,6 +144,8 @@
         @media (max-width: 768px) {
             .wrapper { grid-template-columns: 1fr; }
             main { padding: 1.5rem; }
+            .card { flex-direction: column; }
+            .project-img { width: 100%; height: auto; }
         }
     </style>
 </head>
@@ -215,17 +239,29 @@
             <h2><i class="fas fa-project-diagram"></i> Projetos em Destaque</h2>
             
             <div class="card">
-                <h3>Portal do Conhecimento (PPGs - EFLCH)</h3>
-                <p>Solução que organiza o conhecimento acadêmico. 
-                    Os dados de uma planilha Google são convertidos em JSON via Google Apps Script e transferidos para o GitHub com um clique.</p>
-                <a href="https://mauriciooura-a11yke.github.io/ppgs-eflch/" class="btn" target="_blank" rel="noopener noreferrer">Explorar Projeto</a>
+                <div class="card-content">
+                    <h3>Portal do Conhecimento (PPGs - EFLCH)</h3>
+                    <p>Solução que organiza o conhecimento acadêmico. 
+                        Os dados de uma planilha Google são convertidos em JSON via Google Apps Script e transferidos para o GitHub com um clique.</p>
+                    <a href="https://mauriciooura-a11yke.github.io/ppgs-eflch/" class="btn" target="_blank" rel="noopener noreferrer">Explorar Projeto</a>
+                </div>
+                <div class="card-images">
+                    <img id="img-portal-1" src="" class="project-img" alt="Screenshot Portal 1">
+                    <img id="img-portal-2" src="" class="project-img" alt="Screenshot Portal 2">
+                </div>
             </div>
 
             <div class="card">
-                <h3>Painel de Execução Orçamentária</h3>
-                <p>Integração de dados do Tesouro Gerencial com Looker Studio através de automação Python e Google Apps Script. 
-                    Os dados são atualizados e carregados diariamente sem intervenção humana.</p>
-                <a href="https://datastudio.google.com/u/0/reporting/2d004452-b28a-4809-bb74-dc3df62db6fc/page/p_gtv8qv5ckd" class="btn" target="_blank" rel="noopener noreferrer">Acessar Painel</a>
+                <div class="card-content">
+                    <h3>Painel de Execução Orçamentária</h3>
+                    <p>Integração de dados do Tesouro Gerencial com Looker Studio através de automação Python e Google Apps Script. 
+                        Os dados são atualizados e carregados diariamente sem intervenção humana.</p>
+                    <a href="https://datastudio.google.com/u/0/reporting/2d004452-b28a-4809-bb74-dc3df62db6fc/page/p_gtv8qv5ckd" class="btn" target="_blank" rel="noopener noreferrer">Acessar Painel</a>
+                </div>
+                <div class="card-images">
+                    <img id="img-painel-1" src="" class="project-img" alt="Dashboard Orçamento 1">
+                    <img id="img-painel-2" src="" class="project-img" alt="Dashboard Orçamento 2">
+                </div>
             </div>
         </section>
 
