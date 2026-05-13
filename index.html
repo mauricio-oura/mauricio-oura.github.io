@@ -92,32 +92,36 @@
         .card {
             background: white;
             border-radius: 8px;
-            padding: 1.2rem;
-            margin-bottom: 1rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
             transition: transform 0.2s;
-            /* Layout para imagens ao lado */
+            /* Ajustado para comportar imagens maiores */
             display: flex;
+            flex-direction: column; 
             gap: 20px;
-            align-items: center;
         }
+        
         .card:hover { transform: translateY(-3px); }
 
         .card-content { flex: 1; }
         
         .card-images { 
             display: flex; 
-            gap: 10px; 
-            flex-shrink: 0;
+            gap: 15px; 
+            flex-wrap: wrap; /* Permite que as imagens quebrem linha se necessário */
+            justify-content: center;
         }
 
         .project-img {
-            width: 120px;
-            height: 80px;
+            /* Tamanho 3x maior que o anterior (120x3 = 360 | 80x3 = 240) */
+            width: 360px;
+            height: 240px;
             object-fit: cover;
-            border-radius: 4px;
+            border-radius: 6px;
             border: 1px solid #ddd;
-            background-color: #eee; /* Cor de fundo enquanto não carrega */
+            background-color: #eee;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
         .badge {
@@ -144,7 +148,6 @@
         @media (max-width: 768px) {
             .wrapper { grid-template-columns: 1fr; }
             main { padding: 1.5rem; }
-            .card { flex-direction: column; }
             .project-img { width: 100%; height: auto; }
         }
     </style>
@@ -246,8 +249,7 @@
                     <a href="https://mauriciooura-a11yke.github.io/ppgs-eflch/" class="btn" target="_blank" rel="noopener noreferrer">Explorar Projeto</a>
                 </div>
                 <div class="card-images">
-                    <img id="img-portal-1" src="" class="project-img" alt="Screenshot Portal 1">
-                    <img id="img-portal-2" src="" class="project-img" alt="Screenshot Portal 2">
+                    <img id="img-portal-1" src="" class="project-img" alt="Screenshot Portal 1">        
                 </div>
             </div>
 
