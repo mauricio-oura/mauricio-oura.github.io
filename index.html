@@ -165,7 +165,7 @@
             margin-bottom: 5px; 
         }
 
-        /* BADGES (Efeito de Acender LED Azul ao passar o mouse) */
+        /* BADGES */
         .badge-grid { 
             display: flex; 
             flex-wrap: wrap; 
@@ -192,24 +192,59 @@
             box-shadow: 0 0 14px var(--accent-glow), 0 0 4px var(--accent-color);
         }
 
-        /* CARDS DE PROJETOS INTERATIVOS (Efeito LED de Fundo Azul) */
+        /* ESTILO PARA O GRID DO SUMÁRIO AUTOMÁTICO */
+        .grid-sumario {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .mini-card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .mini-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-left: 4px solid var(--accent-color);
+            padding: 12px;
+            border-radius: 6px;
+            transition: all 0.3s var(--transition-smooth);
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        .mini-card:hover {
+            background: var(--accent-color);
+            border-color: #60a5fa;
+            transform: translateY(-3px);
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        .mini-card:hover strong { color: #fff !important; }
+        .mini-card:hover small { color: rgba(255, 255, 255, 0.8) !important; }
+
+        /* CARDS DE PROJETOS INTERATIVOS */
         .card {
             background: rgba(255, 255, 255, 0.02);
             border-radius: 8px;
             padding: 1.5rem;
-            margin-bottom: 1.2rem;
+            margin-bottom: 2rem;
             border-left: 5px solid var(--accent-color);
             border-top: 1px solid rgba(255, 255, 255, 0.03);
             border-right: 1px solid rgba(255, 255, 255, 0.03);
             border-bottom: 1px solid rgba(255, 255, 255, 0.03);
             transition: all 0.4s var(--transition-smooth);
+            scroll-margin-top: 30px; /* Evita que o topo do card fique colado no teto ao rolar */
         }
 
         .card:hover {
             transform: translateY(-4px);
             background: rgba(255, 255, 255, 0.05);
             border-color: rgba(59, 130, 246, 0.4);
-            border-left-width: 5px;
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 0 15px -2px var(--accent-glow);
         }
 
@@ -218,11 +253,10 @@
             color: #fff;
         }
 
-        /* CORREÇÃO DO LINK: AGORA 100% AZUL ELÉTRICO E NEON */
         .btn-link {
             display: inline-block;
             margin-top: 5px;
-            color: #60a5fa !important; /* Força o tom azul claro contrastante para os links */
+            color: #60a5fa !important;
             text-decoration: none;
             font-weight: 600;
             position: relative;
@@ -254,10 +288,10 @@
             transform-origin: bottom left;
         }
 
-        /* CONFIGURAÇÃO DE IMPRESSÃO (REVERTE PARA FUNDO CLARO E LIMPO SE FOR SALVAR EM PDF) */
+        /* CONFIGURAÇÃO DE IMPRESSÃO */
         @media print {
             body { background: white !important; color: #24292e !important; }
-            .progress-bar { display: none; }
+            .progress-bar, .grid-sumario, .topo-link-container { display: none !important; }
             .cv-container { margin: 0; padding: 0; box-shadow: none; max-width: 100%; animation: none !important; background: transparent !important; border: none !important; }
             header h1 { color: #2c3e50 !important; text-shadow: none !important; }
             header p.subtitle { color: #1e3a8a !important; text-shadow: none !important; }
@@ -267,8 +301,8 @@
             h2:hover i { animation: none !important; text-shadow: none !important; }
             .item-header { color: #2c3e50 !important; }
             .job-title { color: #1e3a8a !important; }
-            .badge { border: 1px solid #ccc !important; color: black !important; background: transparent !important; backdrop-filter: none !important; transform: none !important; box-shadow: none !important; }
-            .card { transform: none !important; box-shadow: none !important; background: transparent !important; border: 1px solid #ccc !important; border-left: 5px solid #3b82f6 !important; color: #24292e !important; }
+            .badge { border: 1px solid #ccc !important; color: black !important; background: transparent !important; transform: none !important; box-shadow: none !important; }
+            .card { transform: none !important; box-shadow: none !important; background: transparent !important; border: 1px solid #ccc !important; border-left: 5px solid #3b82f6 !important; color: #24292e !important; margin-bottom: 1.5rem; }
             .card h3 { color: #2c3e50 !important; }
             .btn-link { color: #1e3a8a !important; text-decoration: underline !important; }
             .btn-link::after { display: none; }
@@ -282,8 +316,6 @@
             .grid-layout { grid-template-columns: 1fr !important; gap: 20px !important; }
             .cv-container { padding: 1.5rem; margin: 1rem; }
             .item-header { flex-direction: column; }
-            .item[style*="display: flex"] { flex-direction: column; align-items: flex-start !important; gap: 5px !important; }
-            .item[style*="display: flex"] a { margin-top: 5px; }
         }
     </style>
 </head>
@@ -304,7 +336,7 @@
 
     <section>
         <h2><i class="fas fa-user-tie"></i> Resumo Profissional</h2>
-        <p>Sou um profissional focado na automação de atividades e democratização da informação por meio do uso de 
+        <p>Sou um professional focado na automação de atividades e democratização da informação por meio do uso de 
             tecnologias livres ou de baixo custo. Com uma visão estratégica moldada pelo Doutorado em Administração, 
             atuo na modernização do serviço público utilizando <b>Inteligência Artificial como força multiplicadora</b>. Desenvolvo automações com Python e Google Apps Script assistidas por IA para converter atividades burocráticas em soluções ágeis, transparentes e de alto impacto.</p>
     </section>
@@ -326,7 +358,7 @@
                 <span class="badge">Automação + IA</span>
                 <span class="badge">Python</span>
                 <span class="badge">Google Apps Script</span>
-                <span class="badge">Data Studio / Business Intellingece - BI</span>
+                <span class="badge">Data Studio / Business Intelligence - BI</span>
                 <span class="badge">Gestão de Riscos</span>
                 <span class="badge">Comércio Exterior</span>
                 <span class="badge">Sistema SEI!</span>
@@ -365,7 +397,7 @@
                 <span class="job-title" style="margin-bottom: 0; font-size: 1rem;">2025 - Homenagem: Destaque TAE - 2025</span>
                 <small style="color: var(--text-muted); display: block;">Reconhecimento da Unifesp pela contribuição ao Campus Guarulhos na categoria Técnico-Administrativo.</small>
             </div>
-            <a href="https://drive.google.com/file/d/1HS_YWQoxjXajDSJpzRrkPUmUDrQ0QLYE/view?usp=drive_link" class="btn-link" target="_blank" style="white-space: nowrap; font-size: 0.85rem;">Ver certificado →</a>
+            <a href="https://raw.githubusercontent.com/mauriciooura-a11yke/mauriciooura-a11yke/main/2025%20-%20homenagem%20unifesp_rotated.pdf" class="btn-link" target="_blank" style="white-space: nowrap; font-size: 0.85rem;">Ver certificado →</a>
         </div>
         
         <div class="item" style="display: flex; justify-content: space-between; align-items: baseline; gap: 15px; margin-bottom: 0.5rem;">
@@ -389,7 +421,7 @@
                 <span class="job-title" style="margin-bottom: 0; font-size: 1rem;">2016 - Prêmio Melhores Práticas de Gestão - UFABC</span>
                 <small style="color: var(--text-muted); display: block;">3º lugar com o trabalho sobre Gestão Baseada em Riscos e eficiência pública.</small>
             </div>
-            <a href="https://drive.google.com/file/d/1QIXTOlq40cTGt4xeo-viU8WeB_ER8Gs7/view?usp=drive_link" class="btn-link" target="_blank" style="white-space: nowrap; font-size: 0.85rem;">Ver certificado →</a>
+            <a href="https://raw.githubusercontent.com/mauriciooura-a11yke/mauriciooura-a11yke/main/2016%20-%20UFABC%20-%20Premio%20Melhores%20Praticas%20de%20Gestao%20UFABC%20-%20Edicao%202016_rotated.pdf" class="btn-link" target="_blank" style="white-space: nowrap; font-size: 0.85rem;">Ver certificado →</a>
         </div>
 
         <div class="item" style="display: flex; justify-content: space-between; align-items: baseline; gap: 15px; margin-bottom: 0.5rem;">
@@ -397,7 +429,7 @@
                 <span class="job-title" style="margin-bottom: 0; font-size: 1rem;">2012 - Prêmio ANPAD</span>
                 <small style="color: var(--text-muted); display: block;">Melhor artigo da Divisão de Gestão de Ciência, Tecnologia e Inovação.</small>
             </div>
-            <a href="https://drive.google.com/file/d/1BGypx-8u68iNRFzoG8FmzS0w7YyAoqea/view?usp=drive_link" class="btn-link" target="_blank" style="white-space: nowrap; font-size: 0.85rem;">Ver certificado →</a>
+            <a href="https://raw.githubusercontent.com/mauriciooura-a11yke/mauriciooura-a11yke/main/2012%20-%20ENANPAD%20-%20Premio%20Enanpad.pdf" class="btn-link" target="_blank" style="white-space: nowrap; font-size: 0.85rem;">Ver certificado →</a>
         </div>
     </section>
 
@@ -419,7 +451,7 @@
                 <span>2010 - 2018</span>
             </div>
             <span class="job-title">Administrador / Chefe de Importação</span>
-            <p>Como chefe de importação, fui responsável pela redução de prazos e custos operacionais da área, com foco na otimização de processos e ganhos de eficiência. Atuei como pioneiro na implementação da Gestão Baseada em Riscos nesse setor, estruturando práticas voltadas à mitigação de contingências e maior descentralização de decisões. Também coordenei a importação de um data center de grande porte (“Ice Cube”), envolvendo operação de alta complexidade e valores de milhões de dólares.</p>
+            <p>Como chefe de importação, fui responsável pela redução de prazos e custos operacionais da área, com foco na otimização de processos e ganhos de eficiência. Atuei como pioneiro na implementação da Gestão Baseada em Riscos nesse setor, estruturando practices voltadas à mitigação de contingências e maior descentralização de decisões. Também coordenei a importação de um data center de grande porte (“Ice Cube”), envolvendo operação de alta complexidade e valores de milhões de dólares.</p>
         </div>
 
         <div class="item">
@@ -441,137 +473,95 @@
         </div>
     </section>
 
-    <section>
+    <section id="portfolio-section">
         <h2><i class="fas fa-layer-group"></i> Meu Portfólio de Soluções</h2>
-        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px;">Conheça alguns projetos técnicos desenvolvidos por mim para resolução de problemas reais:</p>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">Conheça alguns projetos técnicos desenvolvidos por mim para resolução de problemas reais:</p>
         
-        <div class="card">
+        <div id="dynamic-summary-holder" class="grid-sumario"></div>
+
+        <div class="card" id="portal-conhecimento" data-tech="<i class='fas fa-code'></i> Apps Script + GitHub">
             <h3>Portal do Conhecimento | PPGs - EFLCH</h3>
             <p style="margin-bottom: 8px;">
-                <b style="color: #f87171; text-shadow: 0 0 8px rgba(248, 113, 113, 0.3);">Desafio:</b> Organizar, unificar e disponibilizar de forma pública e estruturada o 
-                vasto conhecimento produzido pelos Programas de Pós-Graduação (PPGs) do campus Guarulhos, eliminando a dispersão de dados e facilitando a atualização por usuários não técnicos.
+                <b style="color: #f87171; text-shadow: 0 0 8px rgba(248, 113, 113, 0.3);">Desafio:</b> Organizar, unificar e disponibilizar de forma pública e estruturada o vasto conhecimento produzido pelos Programas de Pós-Graduação (PPGs) do campus Guarulhos, eliminando a dispersão de dados e facilitando a atualização por usuários não técnicos.
             </p>
             <p style="margin-bottom: 8px;">
-                <b style="color: #60a5fa; text-shadow: 0 0 8px rgba(96, 165, 250, 0.3);">A solução:</b> Desenvolvimento de uma arquitetura ágil que extrai dados de uma 
-                planilha de controle do Google, converte-os instantaneamente para formato JSON via Google Apps Script (com um único clique) 
-                e realiza o deploy automatizado para um repositório no GitHub, renderizando os dados em formato de cards interativos.
+                <b style="color: #60a5fa; text-shadow: 0 0 8px rgba(96, 165, 250, 0.3);">A solução:</b> Desenvolvimento de uma arquitetura ágil que extrai dados de uma planilha de controle do Google, converte-os instantaneamente para formato JSON via Google Apps Script (com um único clique) e realiza o deploy automatizado para um repositório no GitHub, renderizando os dados em formato de cards interativos.
             </p>
             <p style="margin-bottom: 15px;">
-                <b style="color: #4ade80; text-shadow: 0 0 8px rgba(74, 222, 128, 0.3);">O resultado:</b> Implementado em abril de 2026, o portal garantiu elevada facilidade 
-                de manutenção para a secretaria, além de proporcionar buscas dinâmicas com processamento ultrarrápido nos filtros, otimizando drasticamente a experiência de navegação do usuário.
+                <b style="color: #4ade80; text-shadow: 0 0 8px rgba(74, 222, 128, 0.3);">O resultado:</b> Implementado em abril de 2026, o portal garantiu elevada facilidade de manutenção para a secretaria, além de proporcionar buscas dinâmicas com processamento ultrarrápido nos filtros, otimizando drasticamente a experiência de navegação do usuário.
             </p> 
             <a href="https://mauriciooura-a11yke.github.io/ppgs-eflch/" class="btn-link" target="_blank">Acessar Portal →</a>
         </div>
-    
-        <div class="card">
+
+        <div class="card" id="execucao-orcamentaria" data-tech="<i class='fas fa-chart-pie'></i> ETL + Data Studio">
             <h3>Painel de Execução Orçamentária da Unifesp</h3>
             <p style="margin-bottom: 8px;">
-                <b style="color: #f87171; text-shadow: 0 0 8px rgba(248, 113, 113, 0.3);">Desafio:</b> Automatizar um processo complexo de extração de 
-                relatórios do Tesouro Gerencial enviados em formato Excel por e-mail, lidando com cabeçalhos mesclados, 
-                linhas extras de totais e delimitações variáveis de dados, para ampliar a transparência orçamentária do órgão.
+                <b style="color: #f87171; text-shadow: 0 0 8px rgba(248, 113, 113, 0.3);">Desafio:</b> Automatizar um processo complexo de extração de relatórios do Tesouro Gerencial enviados em formato Excel por e-mail, lidando com cabeçalhos mesclados, linhas extras de totais e delimitações variáveis de dados para ampliar a transparência orçamentária do órgão.
             </p>
             <p style="margin-bottom: 8px;">
-                <b style="color: #60a5fa; text-shadow: 0 0 8px rgba(96, 165, 250, 0.3);">A solução:</b> Engenharia de um fluxo de ETL (Extração, Transformação e Carga) 100% autônomo. 
-                O script monitora o Gmail, captura os anexos, realiza a conversão de Excel para Google Planilhas, 
-                limpa/estrutura as tabelas logicamente através de código e integra tudo ao Google Data Studio utilizando acionadores de tempo automatizados.
+                <b style="color: #60a5fa; text-shadow: 0 0 8px rgba(96, 165, 250, 0.3);">A solução:</b> Engenharia de um fluxo de ETL (Extração, Transformação e Carga) 100% autônomo. O script monitora o Gmail, captura os anexos, realiza a conversão de Excel para Google Planilhas, limpa/estrutura as tabelas logicamente através de código e integra tudo ao Google Data Studio utilizando acionadores de tempo automatizados.
             </p>
             <p style="margin-bottom: 15px;">
-                <b style="color: #4ade80; text-shadow: 0 0 8px rgba(74, 222, 128, 0.3);">O resultado:</b> Ativo desde agosto de 2024, o projeto eliminou completamente 
-                o trabalho manual de tratamento de dados e gerou um painel dinâmico e auditável, 
-                democratizando o acesso às informações de execução orçamentária de uma instituição pública federal de forma clara e acessível.
+                <b style="color: #4ade80; text-shadow: 0 0 8px rgba(74, 222, 128, 0.3);">O resultado:</b> Ativo desde agosto de 2024, o projeto eliminou completamente o trabalho manual de tratamento de dados sensíveis e gerou um painel dinâmico e auditável, democratizando o acesso às informações de execução orçamentária de uma instituição pública federal de forma clara e acessível.
             </p> 
-            <a href="https://datastudio.google.com/u/0/reporting/2d004452-b28a-4809-bb74-dc3df62db6fc/page/p_gtv8qv5ckd" class="btn-link" target="_blank">Visualizar Painel →</a>
+            <a href="https://datastudio.google.com/u/0/reporting/2d004452-b28a-4809-bb74-dc3df62db6fc/page/p_gtv8qv5ckd" class="btn-link" target="_blank">Visualizar Painel de BI →</a>
         </div>
 
-        <div class="card">
+        <div class="card" id="dados-estudantes" data-tech="<i class='fas fa-spider'></i> Scraping + Python">
             <h3>Painel de Dados de Estudantes e Pós-Doutorandos de Programas de Pós-Graduação</h3>
             <p style="margin-bottom: 8px;">
-                <b style="color: #f87171; text-shadow: 0 0 8px rgba(248, 113, 113, 0.3);">Desafio:</b> Automatizar a consolidação e divulgação de informações 
-                estratégicas para secretarias, coordenações de Programas de Pós-Graduação e orientadores.
+                <b style="color: #f87171; text-shadow: 0 0 8px rgba(248, 113, 113, 0.3);">Desafio:</b> Automatizar a consolidação e divulgação de informações estratégicas para secretarias, coordenações de Programas de Pós-Graduação e orientadores.
             </p>
             <p style="margin-bottom: 8px;">
-                <b style="color: #60a5fa; text-shadow: 0 0 8px rgba(96, 165, 250, 0.3);">A solução:</b> Desenvolvimento de uma solução baseada em web scraping (raspagem de dados), 
-                utilizando Selenium e Python. Com poucos cliques, os dados são extraídos automaticamente e integrados, 
-                em tempo real, ao Google Planilhas e ao Google Data Studio, possibilitando a construção de painéis dinâmicos e interativos.
+                <b style="color: #60a5fa; text-shadow: 0 0 8px rgba(96, 165, 250, 0.3);">A solução:</b> Desenvolvimento de uma solução baseada em web scraping (raspagem de dados), utilizando Selenium e Python. Com poucos cliques, os dados são extraídos automaticamente e integrados, em tempo real, ao Google Planilhas e ao Google Data Studio, possibilitando a construção de painéis dinâmicos e interativos.
             </p>
             <p style="margin-bottom: 15px;">
-                <b style="color: #4ade80; text-shadow: 0 0 8px rgba(74, 222, 128, 0.3);">O resultado:</b> Ativo desde dezembro de 2024, o projeto vem sendo continuamente aprimorado. 
-                Atualmente, o painel disponibiliza indicadores consolidados de cada PPG, filtros interativos para emissão de relatórios personalizados, 
-                estatísticas relacionadas aos prazos de defesa, além de exibição de listagem de estudantes com prazos vencidos ou próximos do vencimento.
-                As informações referentes a novos ingressantes, alterações de situação acadêmica, datas de defesa e homologação são atualizadas diariamente. 
-                Já os dados relativos a prazos de vencimento são atualizados quinzenalmente, em razão da menor necessidade de atualização contínua.
+                <b style="color: #4ade80; text-shadow: 0 0 8px rgba(74, 222, 128, 0.3);">O resultado:</b> Ativo desde dezembro de 2024, o projeto vem sendo continuamente aprimorado. Atualmente, o painel disponibiliza indicadores consolidados de cada PPG, filtros interativos para emissão de relatórios personalizados, estatísticas relacionadas aos prazos de defesa, além de exibição de listagem de estudantes com prazos vencidos ou próximos do vencimento. As informações referentes a novos ingressantes, alterações de situação acadêmica, datas de defesa e homologação são atualizadas diariamente. Já os dados relativos a prazos de vencimento são atualizados quinzenalmente, em razão da menor necessidade de atualização contínua.
             </p> 
             <a href="https://drive.google.com/file/d/1x5QfRUlnZBkjBPdR_88IyeFN_XFl0JxJ/view?usp=drive_link" class="btn-link" target="_blank">Visualizar Print de parte do Painel →</a>
         </div>
-    
-        <div class="card">
+
+        <div class="card" id="agenda-bancas" data-tech="<i class='fas fa-calendar-alt'></i> Sincronização BI">
             <h3>Painel de divulgação de Agenda de Bancas</h3>
             <p style="margin-bottom: 8px;">
-                <b style="color: #f87171; text-shadow: 0 0 8px rgba(248, 113, 113, 0.3);">Desafio:</b> Dar publicidade oficial e transparente à agenda de bancas do PPG 
-                em Educação diretamente no site da instituição, eliminando retrabalhos, atrasos na comunicação ou a necessidade de processos manuais adicionais.
+                <b style="color: #f87171; text-shadow: 0 0 8px rgba(248, 113, 113, 0.3);">Desafio:</b> Dar publicidade oficial e transparente à agenda de bancas do PPG em Educação diretamente no site da instituição, eliminando retrabalhos, atrasos na comunicação e a necessidade de espaços físicos ou processos manuais adicionais.
             </p>
             <p style="margin-bottom: 8px;">
-                <b style="color: #60a5fa; text-shadow: 0 0 8px rgba(96, 165, 250, 0.3);">A solução:</b> Criação de uma ponte automatizada baseada em BI 
-                que lê em tempo real os dados da planilha de controle interno já utilizada pela secretaria do PPGE. 
-                À medida que um agendamento é validado internamente, a informação é transmitida e sincronizada instantaneamente, sem intervenção humana.
+                <b style="color: #60a5fa; text-shadow: 0 0 8px rgba(96, 165, 250, 0.3);">A solução:</b> Criação de uma ponte automatizada baseada em BI que lê em tempo real os dados da planilha de controle interno já utilizada pela secretaria do PPGE. À medida que um agendamento é validado internamente, a informação é transmitida e sincronizada de forma imediata e sem atrito humano.
             </p>
             <p style="margin-bottom: 15px;">
-                <b style="color: #4ade80; text-shadow: 0 0 8px rgba(74, 222, 128, 0.3);">O resultado:</b> Lançado em maio de 2026, o painel garantiu transparência ativa para a sociedade, 
-                permitindo que os alunos acompanhem de forma autônoma a homologação dos seus pedidos e assegurando o cumprimento 
-                dos atos de publicidade da secretaria sem demandar esforço ou tempo operacional extra da equipe.
+                <b style="color: #4ade80; text-shadow: 0 0 8px rgba(74, 222, 128, 0.3);">O resultado:</b> Lançado em maio de 2026, o painel garantiu transparência activa para a sociedade, permitindo que os alunos acompanhem de forma autônoma a homologação dos seus pedidos e assegurando o cumprimento dos atos de publicidade da secretaria sem demandar esforço ou tempo operacional extra da equipe.
             </p> 
             <a href="https://datastudio.google.com/u/0/reporting/322acdc7-ed75-4c08-8a70-a9c9cbf9c33c/page/rUZxF" class="btn-link" target="_blank">Acessar o Painel →</a>
         </div>
 
-        <div class="card">
+        <div class="card" id="mailing-list" data-tech="<i class='fas fa-envelope-open-text'></i> WebApp + Selenium">
             <h3>WebApp Gerador de Mailing List</h3>
             <p style="margin-bottom: 8px;">
-                <b style="color: #f87171; text-shadow: 0 0 8px rgba(248, 113, 113, 0.3);">Desafio:</b> Otimizar a atualização de mailing lists 
-                e a geração de listas segmentadas para diferentes públicos-alvo. 
+                <b style="color: #f87171; text-shadow: 0 0 8px rgba(248, 113, 113, 0.3);">Desafio:</b> Otimizar a atualização de mailing lists e a geração de listas segmentadas para diferentes públicos-alvo.
             </p>
             <p style="margin-bottom: 8px;">
-                <b style="color: #60a5fa; text-shadow: 0 0 8px rgba(96, 165, 250, 0.3);">A solução:</b> Desenvolvimento de uma solução automática 
-                baseada em web scraping (raspagem de dados), utilizando Selenium e Python. 
-                Com alguns cliques, os dados são extraídos automaticamente e integrados, em tempo real, ao Google Planilhas. 
-                Os dados são disponibilizados em um WebApp publicado por meio do Google Apps Script. A configuração de 
-                permissões de acesso é feita pelo próprio gestor da unidade, em aba própria da planilha.
+                <b style="color: #60a5fa; text-shadow: 0 0 8px rgba(96, 165, 250, 0.3);">A solução:</b> Desenvolvimento de uma solução automática baseada em web scraping (raspagem de dados), utilizando Selenium e Python. Com alguns cliques, os dados são extraídos automaticamente e integrados, em tempo real, ao Google Planilhas. Os dados são disponibilizados em um WebApp publicado por meio do Google Apps Script. A configuração de permissões de acesso é feita pelo próprio gestor da unidade, em aba própria da planilha.
             </p>
             <p style="margin-bottom: 15px;">
-                <b style="color: #4ade80; text-shadow: 0 0 8px rgba(74, 222, 128, 0.3);">O resultado:</b> Lançado em setembro de 2025, 
-                o Web App apresenta um visual "clean" e permite a geração de listas personalizadas de e-mails de forma rápida e automatizada. 
-                Além de manter os dados permanentemente atualizados, a ferramenta oferece filtros dinâmicos de alto desempenho, 
-                possibilitando segmentações por curso, situação acadêmica, nível e ano de ingresso. A solução reduziu significativamente o tempo 
-                necessário para preparação de comunicações institucionais, ampliando a precisão das listas e 
-                facilitando a gestão da comunicação com diferentes públicos acadêmicos. A ferramenta dispensa a existência de várias 
-                planilhas em cada PPG.
+                <b style="color: #4ade80; text-shadow: 0 0 8px rgba(74, 222, 128, 0.3);">O resultado:</b> Lançado em setembro de 2025, o Web App apresenta um visual "clean" e permite a geração de listas personalizadas de e-mails de forma rápida e automatizada. Além de manter os dados permanentemente atualizados, a ferramenta oferece filtros dinâmicos de alto desempenho, possibilitando segmentações por curso, situação acadêmica, nível e ano de ingresso. A solução reduziu significativamente o tempo necessário para preparação de comunicações institucionais, ampliando a precisão das listas e facilitando a gestão da comunicação com diferentes públicos acadêmicos. A ferramenta dispensa a existência de várias planilhas em cada PPG.
             </p> 
             <a href="https://drive.google.com/file/d/1Fn_UYxo38k8dOMbK2W5x5V36wdSn4MFr/view?usp=sharing" class="btn-link" target="_blank">Acessar print do WebApp →</a>
         </div>
 
-        <div class="card">
+        <div class="card" id="migrador-arquivos" data-tech="<i class='fas fa-file-import'></i> Streamlit + API">
             <h3>Migrador de Arquivos de Páginas Web para Google Drive</h3>
             <p style="margin-bottom: 8px;">
-                <b style="color: #f87171; text-shadow: 0 0 8px rgba(248, 113, 113, 0.3);">Desafio:</b> Migrar arquivos publicados em páginas web para um novo portal institucional, 
-                transferindo documentos hospedados nas mídias do Joomla para o Google Drive de forma estruturada e automatizada. 
+                <b style="color: #f87171; text-shadow: 0 0 8px rgba(248, 113, 113, 0.3);">Desafio:</b> Migrar arquivos publicados em páginas web para um novo portal institucional, transferindo documentos hospedados nas mídias do Joomla para o Google Drive de forma estruturada e automatizada.
             </p>
             <p style="margin-bottom: 8px;">
-                <b style="color: #60a5fa; text-shadow: 0 0 8px rgba(96, 165, 250, 0.3);">A solução:</b> Desenvolvimento de uma ferramenta em Python 
-                utilizando a biblioteca Streamlit, integrada automaticamente ao Google Drive. A aplicação permite 
-                ao usuário informar a URL da página a ser processada e, opcionalmente, definir uma palavra-chave 
-                para delimitar o ponto a partir do qual os arquivos deverão ser identificados e baixados.
+                <b style="color: #60a5fa; text-shadow: 0 0 8px rgba(96, 165, 250, 0.3);">A solução:</b> Desenvolvimento de uma ferramenta em Python utilizando a biblioteca Streamlit, integrada automaticamente ao Google Drive. A aplicação permite ao usuário informar a URL da página a ser processada e, opcionalmente, definir uma palavra-chave para delimitar o ponto a partir do qual os arquivos deverão ser identificados e baixados.
             </p>
             <p style="margin-bottom: 15px;">
-                <b style="color: #4ade80; text-shadow: 0 0 8px rgba(74, 222, 128, 0.3);">O resultado:</b> Desenvolvida em novembro de 2025, a ferramenta automatiza 
-                o processo de extração e migração de arquivos. Após a execução, os documentos são baixados diretamente da página web 
-                e armazenados em uma pasta no Google Drive. Simultaneamente, o sistema gera uma planilha contendo a listagem dos textos 
-                identificados e seus respectivos links para os arquivos armazenados no Drive. A solução reduziu significativamente o trabalho manual de 
-                migração, proporcionando maior agilidade, rastreabilidade e organização no processo de atualização do portal institucional.
+                <b style="color: #4ade80; text-shadow: 0 0 8px rgba(74, 222, 128, 0.3);">O resultado:</b> Desenvolvida em novembro de 2025, a ferramenta automatiza o processo de extração e migração de arquivos. Após a execução, os documentos são baixados diretamente da página web e armazenados em uma pasta no Google Drive. Simultaneamente, o sistema gera uma planilha contendo a listagem dos textos identificados e seus respectivos links para os arquivos armazenados no Drive. A solução reduziu significativamente o trabalho manual de migração, proporcionando maior agilidade, rastreabilidade e organização no processo de atualização do portal institucional.
             </p> 
             <a href="https://drive.google.com/file/d/1z279am6hc9h99org2rlNwDe7ZcC9PClU/view?usp=drive_link" class="btn-link" target="_blank">Acessar print do App →</a>
         </div>
-
-
-        
     </section>
 </div>
 
@@ -588,6 +578,47 @@
         var scrolled = (winScroll / height) * 100;
         document.getElementById("scrollProgress").style.width = scrolled + "%";
     }
+
+    // ENGENHARIA DE AUTOMACÃO DO PORTFÓLIO:
+    // Este script roda ao carregar a página, lê todos os cards de projetos e monta o Sumário Dinâmico sozinho.
+    document.addEventListener("DOMContentLoaded", function() {
+        const portfolioSection = document.getElementById("portfolio-section");
+        const summaryHolder = document.getElementById("dynamic-summary-holder");
+        const cards = portfolioSection.querySelectorAll(".card");
+        
+        cards.forEach(card => {
+            const id = card.getAttribute("id");
+            // Obtém o título limpando espaços extras
+            let title = card.querySelector("h3").innerText;
+            // Corta títulos excessivamente longos no sumário para manter a simetria visual
+            if (title.length > 45) {
+                title = title.substring(0, 42) + "...";
+            }
+            // Obtém a stack tecnológica configurada na propriedade do card
+            const tech = card.getAttribute("data-tech") || "<i class='fas fa-laptop-code'></i> Solução Técnica";
+            
+            // 1. Injeta o mini-card no Sumário
+            const summaryItemHTML = `
+                <a href="#${id}" class="mini-card-link">
+                    <div class="mini-card">
+                        <strong style="color: #fff; font-size: 0.9rem; display: block; margin-bottom: 4px; transition: color 0.3s;">${title}</strong>
+                        <small style="color: var(--text-muted); font-size: 0.75rem; transition: color 0.3s;">${tech}</small>
+                    </div>
+                </a>
+            `;
+            summaryHolder.insertAdjacentHTML('beforeend', summaryItemHTML);
+            
+            // 2. Insere automaticamente o botão de "voltar ao topo" no cabeçalho de cada card principal
+            const cardHeaderHTML = `
+                <div class="topo-link-container" style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+                    <h3 style="margin: 0; font-size: 1.15rem; color: #fff;">${card.querySelector("h3").innerHTML}</h3>
+                    <a href="#portfolio-section" class="btn-link" style="font-size: 0.8rem; font-weight: normal; color: var(--text-muted) !important; white-space: nowrap;"><i class="fas fa-arrow-up"></i> topo</a>
+                </div>
+            `;
+            // Substitui o h3 original pelo novo cabeçalho contendo o botão dinâmico
+            card.querySelector("h3").outerHTML = cardHeaderHTML;
+        });
+    });
 </script>
 
 </body>
