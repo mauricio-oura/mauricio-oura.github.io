@@ -310,6 +310,11 @@
             small { color: #636e72 !important; }
             section { page-break-inside: avoid; }
             footer { display: none; }
+            .contact-info a::after {
+                content: " (" attr(href) ")";
+                font-size: 0.85rem;
+                color: #555;
+            }
         }
 
         @media (max-width: 768px) {
