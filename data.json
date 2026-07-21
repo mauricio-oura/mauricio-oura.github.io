@@ -129,12 +129,12 @@
       "ID": "portal-conhecimento",
       "Titulo": "Portal do Conhecimento | PPGs - EFLCH",
       "Tech": "<i class='fas fa-code'></i> Apps Script + GitHub",
-      "Desafio": "Organizar, unificar e disponibilizar de forma pública e estruturada o vasto conhecimento produzido pelos Programas de Pós-Graduação (PPGs) do campus Guarulhos, eliminando a dispersão de dados e facilitando a atualização por usuários não técnicos.",
-      "Solucao": "Desenvolvimento de uma arquitetura ágil que extrai dados de uma planilha de controle do Google, converte-os instantaneamente para formato JSON via Google Apps Script (com um único clique) e realiza o deploy automatizado para um repositório no GitHub, renderizando os dados em formato de cards interativos.",
+      "Desafio": "Organizar, unificar e disponibilizar de forma estruturada o vasto conhecimento produzido pelos Programas de Pós-Graduação (PPGs) do campus Guarulhos, eliminando a dispersão de dados e facilitando a atualização por usuários não técnicos.",
+      "Solucao": "Desenvolvimento de uma arquitetura ágil que extrai dados de uma planilha de controle do Google, converte-os instantaneamente para formato JSON via interface web (com um único clique) e realiza o deploy automatizado para um repositório no GitHub, renderizando os dados em formato de cards interativos.",
       "Resultado": "Implementado em abril de 2026, o portal garantiu elevada facilidade de manutenção para a secretaria, além de proporcionar buscas dinâmicas com processamento ultrarrápido nos filtros, otimizando drasticamente a experiência de navegação do usuário.",
       "Badge": "",
-      "Link": "https://mauriciooura-a11yke.github.io/ppgs-eflch/",
-      "LinkLabel": "Acessar Portal →"
+      "Link": "https://drive.google.com/file/d/1Y4JfEOaXOpBuyu0OTLiUwavdpPgqvPz_/view?usp=drive_link",
+      "LinkLabel": "Visualizar Print do Sistema →"
     },
     {
       "ID": "execucao-orcamentaria",
