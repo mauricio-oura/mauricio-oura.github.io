@@ -201,6 +201,17 @@
       "Badge": "<i class=\"fas fa-lock\"></i> Uso Pessoal / Produtividade",
       "Link": "https://drive.google.com/file/d/10Xuorm3jcWk8bd9x2w-pYg7bkTAESowS/view?usp=drive_link",
       "LinkLabel": "Visualizar Print do Programa →"
+    },
+    {
+      "ID": "atendimento-adm-gru",
+      "Titulo": "Sistema de divulgação de escalas de atendimento",
+      "Tech": "<i class='fas fa-file-code'></i> Google Apps Script\n<i class='fas fa-globe'></i> WebApp (HTML/CSS/JS)\n<i class='fab fa-github'></i> GitHub Pages + API\n<i class='fas fa-user-shield'></i> Controle de Acesso por Papel\n<i class='fas fa-clock'></i> Automação (Triggers)\n<i class='fas fa-shield-alt'></i> Privacy by Design",
+      "Desafio": "O Departamento Administrativo de uma universidade publicava horários e forma de atendimento de 13 setores em um painel de Data Studio alimentado manualmente, sem vínculo com a situação real de férias/afastamentos dos servidores — exigindo atualização manual constante e sem garantia de que o público estivesse vendo dados confiáveis sobre quem realmente estaria presencial em cada dia.",
+      "Solucao": "Arquitetei e desenvolvi, do zero, uma solução full-stack sobre Google Apps Script e GitHub Pages: um Web App com controle de acesso por papel (admin/servidor, com suporte a acúmulo de papéis), CRUD de setores e servidores com vínculos N:N, cadastro self-service de horários e afastamentos, e um pipeline de publicação que pré-calcula no servidor — sem nunca expor o calendário de ausências publicamente — uma programação de atendimento presencial para duas semanas, sincronizada automaticamente com um site público responsivo (HTML/CSS/JS) hospedado no GitHub Pages, com QR code de acesso e atualização diária automatizada via gatilho de tempo.",
+      "Resultado": "Desenvolvido em julho de 2026, possibilitou a substituição integral de um painel estático e manual por um sistema vivo, auditável (com painel de conferência de preenchimento) e seguro por design (dados sensíveis de RH nunca trafegam ao público), reduzindo a carga operacional de atualização manual e aumentando a confiabilidade da informação exposta a docentes, discentes e comunidade externa sobre a disponibilidade real de atendimento presencial por setor.",
+      "Badge": "",
+      "Link": "https://mauriciooura-a11yke.github.io/adm-gru/",
+      "LinkLabel": "Visualizar o site →"
     }
   ]
 }
