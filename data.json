@@ -1,0 +1,184 @@
+{
+  "header": {
+    "nome": "Mauricio Massao Oura",
+    "subtitulo": "Automação de Atividades | Business Intelligence - BI | Dashboards Dinâmicos",
+    "email": "mauricio.oura@gmail.com",
+    "githubLabel": "github.com/mauricio-oura",
+    "githubUrl": "https://mauricio-oura.github.io",
+    "lattesUrl": "http://lattes.cnpq.br/8200289301250947",
+    "localizacao": "Guarulhos, SP"
+  },
+  "resumo": "Sou um professional focado na automação de atividades e democratização da informação por meio do uso de tecnologias livres ou de baixo custo. Com uma visão estratégica moldada pelo Doutorado em Administração, atuo na modernização do serviço público utilizando <b>Inteligência Artificial como força multiplicadora</b>. Desenvolvo automações com Python e Google Apps Script assistidas por IA para converter atividades burocráticas em soluções ágeis, transparentes e de alto impacto.",
+  "formacao": [
+    { "Titulo": "Doutorado em Administração", "Ano": "2014", "Instituicao": "Uninove, SP" },
+    { "Titulo": "Mestrado em Administração", "Ano": "2008", "Instituicao": "Uninove, SP" },
+    { "Titulo": "Bacharelado em Administração (com Habilitação em Comércio Exterior)", "Ano": "2004", "Instituicao": "Torricelli, SP" },
+    { "Titulo": "Certificação em Liderança", "Ano": "2015", "Instituicao": "FGV/SP" }
+  ],
+  "hardSkills": [
+    "Automação + IA",
+    "Python",
+    "Google Apps Script",
+    "Data Studio / Business Intelligence - BI",
+    "Gestão de Riscos",
+    "Comércio Exterior",
+    "Sistema SEI!",
+    "Linux",
+    "Joomla"
+  ],
+  "softSkills": [
+    "Resolução de Problemas",
+    "Pensamento Analítico",
+    "Adaptabilidade / IA",
+    "Liderança de Mudança",
+    "Eficiência Pública"
+  ],
+  "idiomas": [
+    "Inglês (avançado)",
+    "Espanhol (avançado)",
+    "Japonês (Intermediário)",
+    "Francês (Básico)"
+  ],
+  "premios": [
+    {
+      "Titulo": "2025 - Homenagem: Destaque TAE - 2025",
+      "Descricao": "Reconhecimento da Unifesp pela contribuição ao Campus Guarulhos na categoria Técnico-Administrativo.",
+      "Link": "https://drive.google.com/file/d/1HS_YWQoxjXajDSJpzRrkPUmUDrQ0QLYE/view?usp=drive_link",
+      "LinkLabel": "Ver certificado →"
+    },
+    {
+      "Titulo": "2023 - E-book: \"Pimentas nos olhos dos outros...\"",
+      "Descricao": "Obra sobre a consolidação da UNIFESP Guarulhos produzida via Observatório Institucional.",
+      "Link": "https://repositorio.unifesp.br/items/07d9ff55-9144-4237-9363-84be6536e5bd",
+      "LinkLabel": "Acessar obra →"
+    },
+    {
+      "Titulo": "2016 - Artigo: <em>\"Innovation capacity, international experience and export performance of SMEs in Brazil\"</em>",
+      "Descricao": "Publicado na <em>International Business Review</em> (derivado de tese de doutorado), apresenta alto fator de impacto, com centenas de citações.",
+      "Link": "https://doi.org/10.1016/j.ibusrev.2015.12.002",
+      "LinkLabel": "Ler artigo →"
+    },
+    {
+      "Titulo": "2016 - Prêmio Melhores Práticas de Gestão - UFABC",
+      "Descricao": "3º lugar com o trabalho sobre Gestão Baseada em Riscos e eficiência pública.",
+      "Link": "https://drive.google.com/file/d/1QIXTOlq40cTGt4xeo-viU8WeB_ER8Gs7/view?usp=drive_link",
+      "LinkLabel": "Ver certificado →"
+    },
+    {
+      "Titulo": "2012 - Prêmio ANPAD",
+      "Descricao": "Melhor artigo da Divisão de Gestão de Ciência, Tecnologia e Inovação.",
+      "Link": "https://drive.google.com/file/d/1BGypx-8u68iNRFzoG8FmzS0w7YyAoqea/view?usp=drive_link",
+      "LinkLabel": "Ver certificado →"
+    }
+  ],
+  "experiencia": [
+    {
+      "Empresa": "UNIVERSIDADE FEDERAL DE SÃO PAULO - UNIFESP",
+      "Periodo": "2018 - Atual",
+      "Cargo": "Administrador / Chefe de TI / Coordenador de Observatório / Chefe de Secretaria / Secretário de PPG / Bolsista de Extensão",
+      "Descricao": "Atuei como chefe da Divisão de Tecnologia da Informação e da Secretaria Integrada de Cursos e Pós-Graduação (SICAP-EFLCH), além de coordenar o Observatório Institucional da EFLCH. Também exerci funções administrativas na Diretoria Administrativa do campus. Atualmente, desempenho a função de Secretário do Programa de Pós-Graduação em Educação (PPGE), atuo como bolsista de extensão no Programa Leitura e Escrita na Educação Infantil (ProLEEI), vinculado ao Ministério da Educação, desenvolvendo atividades voltadas à análise e visualização de dados, com foco em Business Intelligence (BI). Também sou membro da Câmara Temática de Segurança de Informação."
+    },
+    {
+      "Empresa": "UNIVERSIDADE FEDERAL DO ABC - UFABC",
+      "Periodo": "2010 - 2018",
+      "Cargo": "Administrador / Chefe de Importação",
+      "Descricao": "Como chefe de importação, fui responsável pela redução de prazos e custos operacionais da área, com foco na otimização de processos e ganhos de eficiência. Atuei como pioneiro na implementação da Gestão Baseada em Riscos nesse setor, estruturando práticas voltadas à mitigação de contingências e maior descentralização de decisões. Também coordenei a importação de um data center de grande porte (\"Ice Cube\"), envolvendo operação de alta complexidade e valores de milhões de dólares."
+    },
+    {
+      "Empresa": "FACULDADES INTEGRADAS TORRICELLI, SENAC, UNIP",
+      "Periodo": "2007 - 2015",
+      "Cargo": "Professor universitário",
+      "Descricao": "Docência em cursos de Graduação e Pós-Graduação nas áreas de Comércio Exterior e Administração."
+    },
+    {
+      "Empresa": "CIA. LILLA DE MÁQUINAS",
+      "Periodo": "2001 - 2010",
+      "Cargo": "Analista de Exportação Sênior",
+      "Descricao": "Iniciei minha trajetória na empresa como estagiário de comércio exterior, sendo posteriormente promovido gradativamente até a posição de analista sênior. Ao longo desse período, desempenhei diversas atividades, entre as quais se destacam: elaboração de cálculos para projetos de usinas de torrefação de café de grande porte, envolvendo valores de milhões de dólares; emissão de proformas (cotações comerciais); emissão de documentos de exportação; contratação e coordenação de embarques marítimos; despacho de produtos via courier; tradução de documentos; e atendimento a clientes internacionais."
+    }
+  ],
+  "portfolio": [
+    {
+      "ID": "gestao-bancas-ppge",
+      "Titulo": "Sistema de Gestão de Prazos, Bancas e Diplomas | PPGE",
+      "Tech": "<i class='fas fa-laptop-code'></i> Streamlit + Google APIs",
+      "Desafio": "Sanar a dispersão e inconsistência de dados acadêmicos provenientes de múltiplas fontes e formatos, eliminando o controle manual e burocrático de datas limite de término de curso, prazos de homologações de títulos e envio de avisos e instruções sobre trâmites de homologação e de expedição de diplomas.",
+      "Solucao": "A solução foi implementada no âmbito do Programa de Pós-Graduação em Educação da Unifesp. Trata-se de uma aplicação web interativa em Python (Streamlit) integrada às APIs do ecossistema Google. O sistema executa um pipeline de ETL para normalizar e unificar os dados brutos, calcula de forma automatizada os casos críticos de prazos acadêmicos, atualiza bases em nuvem (Google Sheets) em tempo real e utiliza a API do Gmail para gerar rascunhos automatizados de e-mails institucionais, além de contar com algoritmos de automação textual para redação de atas de bancas.",
+      "Resultado": "Implementado em dezembro de 2025, a aplicação centraliza de forma absoluta a gestão do programa através de dashboards analíticos (Dashboard Geral, Pós-Doutorado e Follow-up de Documentação). A solução mitigou drasticamente o risco de perda de prazos regulamentares, eliminou o retrabalho operacional na secretaria e garantiu que ela atue de forma proativa na mitigação de inconformidades documentais.",
+      "Badge": "<i class=\"fas fa-microchip\"></i> Solução Interna de Alta Eficiência",
+      "Link": "https://drive.google.com/file/d/1NMGsngllS3YUNX1NxV7AECJhYPzbjLxw/view?usp=drive_link",
+      "LinkLabel": "Visualizar Print do Sistema →"
+    },
+    {
+      "ID": "portal-conhecimento",
+      "Titulo": "Portal do Conhecimento | PPGs - EFLCH",
+      "Tech": "<i class='fas fa-code'></i> Apps Script + GitHub",
+      "Desafio": "Organizar, unificar e disponibilizar de forma pública e estruturada o vasto conhecimento produzido pelos Programas de Pós-Graduação (PPGs) do campus Guarulhos, eliminando a dispersão de dados e facilitando a atualização por usuários não técnicos.",
+      "Solucao": "Desenvolvimento de uma arquitetura ágil que extrai dados de uma planilha de controle do Google, converte-os instantaneamente para formato JSON via Google Apps Script (com um único clique) e realiza o deploy automatizado para um repositório no GitHub, renderizando os dados em formato de cards interativos.",
+      "Resultado": "Implementado em abril de 2026, o portal garantiu elevada facilidade de manutenção para a secretaria, além de proporcionar buscas dinâmicas com processamento ultrarrápido nos filtros, otimizando drasticamente a experiência de navegação do usuário.",
+      "Link": "https://mauriciooura-a11yke.github.io/ppgs-eflch/",
+      "LinkLabel": "Acessar Portal →"
+    },
+    {
+      "ID": "execucao-orcamentaria",
+      "Titulo": "Painel de Execução Orçamentária da Unifesp",
+      "Tech": "<i class='fas fa-chart-pie'></i> ETL + Data Studio",
+      "Desafio": "Automatizar um processo complexo de extração de relatórios do Tesouro Gerencial enviados em formato Excel por e-mail, lidando com cabeçalhos mesclados, linhas extras de totais e delimitações variáveis de dados para ampliar a transparência orçamentária do órgão.",
+      "Solucao": "Engenharia de um fluxo de ETL (Extração, Transformação e Carga) 100% autônomo. O script monitora o Gmail, captura os anexos, realiza a conversão de Excel para Google Planilhas, limpa/estrutura as tabelas logicamente através de código e integra tudo ao Google Data Studio utilizando acionadores de tempo automatizados.",
+      "Resultado": "Ativo desde agosto de 2024, o projeto eliminou completamente o trabalho manual de tratamento de dados sensíveis e gerou um painel dinâmico e auditável, democratizando o acesso às informações de execução orçamentária de uma instituição pública federal de forma clara e acessível.",
+      "Link": "https://datastudio.google.com/u/0/reporting/2d004452-b28a-4809-bb74-dc3df62db6fc/page/p_gtv8qv5ckd",
+      "LinkLabel": "Visualizar Painel de BI →"
+    },
+    {
+      "ID": "dados-estudantes",
+      "Titulo": "Painel de Dados de Estudantes e Pós-Doutorandos de Programas de Pós-Graduação",
+      "Tech": "<i class='fas fa-spider'></i> Scraping + Python",
+      "Desafio": "Automatizar a consolidação e divulgação de informações estratégicas para secretarias, coordenações de Programas de Pós-Graduação e orientadores.",
+      "Solucao": "Desenvolvimento de uma solução baseada em web scraping (raspagem de dados), utilizando Selenium e Python. Com poucos cliques, os dados são extraídos automaticamente e integrados, em tempo real, ao Google Planilhas e ao Google Data Studio, possibilitando a construção de painéis dinâmicos e interativos.",
+      "Resultado": "Ativo desde dezembro de 2024, o projeto vem sendo continuamente aprimorado. Atualmente, o painel disponibiliza indicadores consolidados de cada PPG, filtros interativos para emissão de relatórios personalizados, estatísticas relacionadas aos prazos de defesa, além de exibição de listagem de estudantes com prazos vencidos ou próximos do vencimento. As informações referentes a novos ingressantes, alterações de situação acadêmica, datas de defesa e homologação são atualizadas diariamente. Já os dados relativos a prazos de vencimento são atualizados quinzenalmente, em razão da menor necessidade de atualização contínua.",
+      "Link": "https://drive.google.com/file/d/1x5QfRUlnZBkjBPdR_88IyeFN_XFl0JxJ/view?usp=drive_link",
+      "LinkLabel": "Visualizar Print de parte do Painel →"
+    },
+    {
+      "ID": "agenda-bancas",
+      "Titulo": "Painel de divulgação de Agenda de Bancas",
+      "Tech": "<i class='fas fa-calendar-alt'></i> Sincronização BI",
+      "Desafio": "Dar publicidade oficial e transparente à agenda de bancas do PPG em Educação diretamente no site da instituição, eliminando retrabalhos, atrasos na comunicação e a necessidade de espaços físicos ou processos manuais adicionais.",
+      "Solucao": "Criação de uma ponte automatizada baseada em BI que lê em tempo real os dados da planilha de controle interno já utilizada pela secretaria do PPGE. À medida que um agendamento é validado internamente, a informação é transmitida e sincronizada de forma imediata e sem atrito humano.",
+      "Resultado": "Lançado em maio de 2026, o painel garantiu transparência activa para a sociedade, permitindo que os alunos acompanhem de forma autônoma a homologação dos seus pedidos e assegurando o cumprimento dos atos de publicidade da secretaria sem demandar esforço ou tempo operacional extra da equipe.",
+      "Link": "https://datastudio.google.com/u/0/reporting/322acdc7-ed75-4c08-8a70-a9c9cbf9c33c/page/rUZxF",
+      "LinkLabel": "Acessar o Painel →"
+    },
+    {
+      "ID": "mailing-list",
+      "Titulo": "WebApp Gerador de Mailing List",
+      "Tech": "<i class='fas fa-envelope-open-text'></i> WebApp + Selenium",
+      "Desafio": "Otimizar a atualização de mailing lists e a geração de listas segmentadas para diferentes públicos-alvo.",
+      "Solucao": "Desenvolvimento de uma solução automática baseada em web scraping (raspagem de dados), utilizando Selenium e Python. Com alguns cliques, os dados são extraídos automaticamente e integrados, em tempo real, ao Google Planilhas. Os dados são disponibilizados em um WebApp publicado por meio do Google Apps Script. A configuração de permissões de acesso é feita pelo próprio gestor da unidade, em aba própria da planilha.",
+      "Resultado": "Lançado em setembro de 2025, o Web App apresenta um visual \"clean\" e permite a geração de listas personalizadas de e-mails de forma rápida e automatizada. Além de manter os dados permanentemente atualizados, a ferramenta oferece filtros dinâmicos de alto desempenho, possibilitando segmentações por curso, situação acadêmica, nível e ano de ingresso. A solução reduziu significativamente o tempo necessário para preparação de comunicações institucionais, ampliando a precisão das listas e facilitando a gestão da comunicação com diferentes públicos acadêmicos. A ferramenta dispensa a existência de várias planilhas em cada PPG.",
+      "Link": "https://drive.google.com/file/d/1Fn_UYxo38k8dOMbK2W5x5V36wdSn4MFr/view?usp=sharing",
+      "LinkLabel": "Acessar print do WebApp →"
+    },
+    {
+      "ID": "migrador-arquivos",
+      "Titulo": "Migrador de Arquivos de Páginas Web para Google Drive",
+      "Tech": "<i class='fas fa-file-import'></i> Streamlit + API",
+      "Desafio": "Migrar arquivos publicados em páginas web para um novo portal institucional, transferindo documentos hospedados nas mídias do Joomla para o Google Drive de forma estruturada e automatizada.",
+      "Solucao": "Desenvolvimento de uma ferramenta em Python utilizando a biblioteca Streamlit, integrada automaticamente ao Google Drive. A aplicação permite ao usuário informar a URL da página a ser processada e, opcionalmente, definir uma palavra-chave para delimitar o ponto a partir do qual os arquivos deverão ser identificados e baixados.",
+      "Resultado": "Desenvolvida em novembro de 2025, a ferramenta automatiza o processo de extração e migração de arquivos. Após a execução, os documentos são baixados diretamente da página web e armazenados em uma pasta no Google Drive. Simultaneamente, o sistema gera uma planilha contendo a listagem dos textos identificados e seus respectivos links para os arquivos armazenados no Drive. A solução reduziu significativamente o trabalho manual de migração, proporcionando maior agilidade, rastreabilidade e organização no processo de atualização do portal institucional.",
+      "Link": "https://drive.google.com/file/d/1z279am6hc9h99org2rlNwDe7ZcC9PClU/view?usp=drive_link",
+      "LinkLabel": "Acessar print do App →"
+    },
+    {
+      "ID": "controle-financeiro-webapp",
+      "Titulo": "Sistema de Controle Financeiro Pessoal | WebApp",
+      "Tech": "<i class='fas fa-wallet'></i> WebApp + Apps Script",
+      "Desafio": "Desenvolver uma solução robusta e centralizada de controle financeiro pessoal, eliminando a complexidade do gerenciamento manual de múltiplas contas bancárias, faturas de cartões de crédito e projeções de longo prazo em interfaces nativas rígidas.",
+      "Solucao": "Engenharia de um ecossistema integrado utilizando Google Planilhas como banco de dados relacional e Google Forms para inputs estruturados de transações. Foram desenvolvidos gatilhos automatizados (triggers) e macros via Google Apps Script para consolidação assíncrona de saldos simultâneos, conciliação de faturas de crédito e automação de rotinas recorrentes — permitindo replicar despesas fixas para múltiplos meses futuros com um único clique.",
+      "Resultado": "Sistema de uso pessoal em constante evolução que oferece controle total, previsibilidade e auditoria contínua de patrimônio líquido. A solução provou-se altamente estável, eficiente e scalável para simulações e projeções financeiras plurianuais, validando o uso de ferramentas low-cost para arquiteturas de dados complexas.",
+      "Badge": "<i class=\"fas fa-lock\"></i> Uso Pessoal / Produtividade",
+      "Link": "https://drive.google.com/file/d/1bjtK3e8AfQ7zFAEx6yXzUqH6RZLxIkgh/view?usp=drive_link",
+      "LinkLabel": "Visualizar Print do Programa →"
+    }
+  ]
+}
