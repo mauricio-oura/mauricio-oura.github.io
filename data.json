@@ -195,11 +195,11 @@
       "ID": "controle-financeiro-webapp",
       "Titulo": "Sistema de Controle Financeiro Pessoal | WebApp",
       "Tech": "<i class='fas fa-wallet'></i> WebApp + Apps Script",
-      "Desafio": "Desenvolver uma solução robusta e centralizada de controle financeiro pessoal, eliminando a complexidade do gerenciamento manual de múltiplas contas bancárias, faturas de cartões de crédito e projeções de longo prazo em interfaces nativas rígidas.",
-      "Solucao": "Engenharia de um ecossistema integrado utilizando Google Planilhas como banco de dados relacional e Google Forms para inputs estruturados de transações. Foram desenvolvidos gatilhos automatizados (triggers) e macros via Google Apps Script para consolidação assíncrona de saldos simultâneos, conciliação de faturas de crédito e automação de rotinas recorrentes — permitindo replicar despesas fixas para múltiplos meses futuros com um único clique.",
-      "Resultado": "Sistema de uso pessoal em constante evolução que oferece controle total, previsibilidade e auditoria contínua de patrimônio líquido. A solução provou-se altamente estável, eficiente e scalável para simulações e projeções financeiras plurianuais, validando o uso de ferramentas low-cost para arquiteturas de dados complexas.",
+      "Desafio": "Controle financeiro pessoal e familiar disperso em múltiplas contas, cartões e categorias, sem visibilidade consolidada de fluxo de caixa, orçamento planejado vs. realizado e projeção de saldo futuro — dependente de planilhas manuais de difícil manutenção e acesso apenas via desktop.",
+      "Solucao": "Desenvolvimento de um painel financeiro web completo (Google Apps Script + Google Sheets como backend), com:\nDashboard mobile-first com KPIs de saldo híbrido, cobertura patrimonial e desvio vs. planejado\nMódulos de lançamento rápido (conta e cartão), projeção de despesas recorrentes e edição/exclusão em lote\nPlanejamento orçamentário integrado (despesas fixas/variáveis vs. renda) com edição direta na mesma visualização\nInterface responsiva (tabela no desktop, cards no mobile) e sistema de autenticação por PIN",
+      "Resultado": "Aplicação em uso ativo e evolução contínua (mais de 15 versões incrementais entregues), substituindo controle manual por uma ferramenta única de acesso multiplataforma, com correções de performance e usabilidade guiadas por feedback de uso real (ex.: eliminação de bugs de renderização mobile, consolidação de telas redundantes e simplificação de fluxos de lançamento).",
       "Badge": "<i class=\"fas fa-lock\"></i> Uso Pessoal / Produtividade",
-      "Link": "https://drive.google.com/file/d/1bjtK3e8AfQ7zFAEx6yXzUqH6RZLxIkgh/view?usp=drive_link",
+      "Link": "https://drive.google.com/file/d/10Xuorm3jcWk8bd9x2w-pYg7bkTAESowS/view?usp=drive_link",
       "LinkLabel": "Visualizar Print do Programa →"
     }
   ]
