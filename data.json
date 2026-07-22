@@ -66,7 +66,7 @@
       "Label": "Anos automatizando processos públicos"
     },
     {
-      "Valor": "10",
+      "Valor": "11",
       "Label": "Soluções em produção no portfólio"
     },
     {
@@ -170,6 +170,19 @@
       "Resultado": "Aplicação em uso ativo e evolução contínua (mais de 15 versões incrementais entregues), substituindo controle manual por uma ferramenta única de acesso multiplataforma, com correções de performance e usabilidade guiadas por feedback de uso real (ex.: eliminação de bugs de renderização mobile, consolidação de telas redundantes e simplificação de fluxos de lançamento).",
       "Badge": "<i class=\"fas fa-lock\"></i> Uso Pessoal / Produtividade",
       "Link": "https://drive.google.com/file/d/10Xuorm3jcWk8bd9x2w-pYg7bkTAESowS/view?usp=drive_link",
+      "LinkLabel": "Visualizar Print do Programa →"
+    },
+    {
+      "ID": "agenda-ppge",
+      "Titulo": "Agenda de controle de atividades de um Programa de Pós-Graduação",
+      "Tech": "<i class='fas fa-code'></i> Apps Script + GitHub",
+      "Data": "maio/2026",
+      "Cor": "",
+      "Desafio": "Gerenciar um cronograma acadêmico complexo do PPGE/UNIFESP com múltiplas categorias de eventos, datas sobrepostas e necessidade de controle de visibilidade — sem depender de ferramentas pagas ou infraestrutura institucional, e mantendo o acesso restrito à equipe interna.",
+      "Solucao": "Desenvolvimento de uma aplicação web full-stack sem servidor dedicado, integrando Google Sheets como banco de dados, Google Apps Script como API backend (Web App com autenticação OAuth 2.0), e GitHub Pages como hospedagem do frontend. A interface renderiza uma timeline cronológica interativa com filtragem por categoria, ordenação inteligente por duração de eventos, sistema de ocultação/exibição de registros com controle de permissão por e-mail, renovação automática de sessão e carregamento direto da planilha em tempo real — eliminando arquivos intermediários e etapas manuais de publicação.",
+      "Resultado": "Sistema em produção utilizado pela equipe da secretaria acadêmica, com acesso autenticado, atualização instantânea dos dados ao abrir o app, e interface responsiva que exibe dezenas de eventos acadêmicos com visual diferenciado por categoria, status de vigência e controle granular de visibilidade — tudo construído com ferramentas gratuitas do ecossistema Google e GitHub.",
+      "Badge": "",
+      "Link": "https://drive.google.com/file/d/1mlEwmXvGm-lMeMGVsHPgYSJX9RXoEmbP/view?usp=drive_link",
       "LinkLabel": "Visualizar Print do Programa →"
     },
     {
