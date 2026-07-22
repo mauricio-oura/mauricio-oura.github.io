@@ -113,6 +113,75 @@
             text-shadow: 0 0 8px var(--accent-glow);
         }
 
+        /* CALLOUT DE POSICIONAMENTO */
+        .posicionamento {
+            max-width: 780px;
+            margin: 20px auto 0;
+            padding: 14px 20px;
+            background: rgba(96, 165, 250, 0.06);
+            border: 1px solid rgba(96, 165, 250, 0.25);
+            border-radius: 10px;
+            font-size: 0.92rem;
+            line-height: 1.55;
+            color: var(--text-muted);
+            text-align: left;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .posicionamento i {
+            color: #60a5fa;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        /* FAIXA DE ESTATÍSTICAS */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 15px;
+            margin: 1.5rem 0 2.5rem;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 16px 10px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            transition: all 0.3s var(--transition-smooth);
+        }
+
+        .stat-box:hover {
+            border-color: rgba(96, 165, 250, 0.4);
+            background: rgba(255, 255, 255, 0.04);
+            transform: translateY(-2px);
+        }
+
+        .stat-box .stat-valor {
+            display: block;
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 0 0 10px var(--accent-glow);
+        }
+
+        .stat-box .stat-label {
+            display: block;
+            margin-top: 4px;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+
+        @media print {
+            .posicionamento { background: transparent !important; border: 1px solid #ccc !important; color: #24292e !important; }
+            .stat-box { border: 1px solid #ccc !important; background: transparent !important; }
+            .stat-box .stat-valor { color: #2c3e50 !important; text-shadow: none !important; }
+        }
+
         /* SEÇÕES */
         section { 
             margin-bottom: 2.5rem; 
@@ -253,6 +322,23 @@
             color: #fff;
         }
 
+        .card-date {
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 3px 9px;
+            border-radius: 20px;
+            white-space: nowrap;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+
+        @media print {
+            .card-date { border: 1px solid #ccc !important; color: #555 !important; background: transparent !important; }
+        }
+
         /* GRADE DE 3 COLUNAS: DESAFIO / SOLUÇÃO / RESULTADO */
         .card-columns {
             display: grid;
@@ -381,7 +467,13 @@
         <h1 id="cv-nome">Carregando currículo...</h1>
         <p class="subtitle" id="cv-subtitulo"></p>
         <div class="contact-info" id="cv-contact"></div>
+        <div class="posicionamento" id="cv-posicionamento" style="display: none;">
+            <i class="fas fa-lightbulb"></i>
+            <span id="cv-posicionamento-texto"></span>
+        </div>
     </header>
+
+    <div class="stats-bar" id="cv-stats"></div>
 
     <section>
         <h2><i class="fas fa-user-tie"></i> Resumo Profissional</h2>
@@ -457,6 +549,8 @@
             const data = await resp.json();
 
             renderHeader(data.header || {});
+            renderPosicionamento(data.posicionamento || "");
+            renderStats(data.estatisticas || []);
             renderResumo(data.resumo || "");
             renderFormacao(data.formacao || []);
             renderBadges("cv-hardskills", data.hardSkills || []);
@@ -483,6 +577,24 @@
             <a href="${h.lattesUrl || '#'}" target="_blank"><i class="fas fa-graduation-cap"></i> Currículo Lattes</a>
             <span><i class="fas fa-map-marker-alt"></i> ${h.localizacao || ''}</span>
         `;
+    }
+
+    function renderPosicionamento(texto) {
+        const container = document.getElementById("cv-posicionamento");
+        if (!texto) { container.style.display = "none"; return; }
+        document.getElementById("cv-posicionamento-texto").innerHTML = texto;
+        container.style.display = "flex";
+    }
+
+    function renderStats(lista) {
+        document.getElementById("cv-stats").innerHTML = lista
+            .filter(s => s && (s.Valor || s.Label))
+            .map(s => `
+                <div class="stat-box">
+                    <span class="stat-valor">${s.Valor || ''}</span>
+                    <span class="stat-label">${s.Label || ''}</span>
+                </div>
+            `).join("");
     }
 
     function renderResumo(texto) {
@@ -527,9 +639,29 @@
         `).join("");
     }
 
+    // Meses em português abreviados, usados para ordenar cronologicamente o portfólio
+    const MESES_PT = { jan: 0, fev: 1, mar: 2, abr: 3, mai: 4, jun: 5, jul: 6, ago: 7, set: 8, out: 9, nov: 10, dez: 11 };
+
+    function parseDataOrdenavel(str) {
+        if (!str) return null;
+        const m = String(str).trim().toLowerCase().match(/^([a-z]{3})\/(\d{4})$/);
+        if (!m || MESES_PT[m[1]] === undefined) return null;
+        return parseInt(m[2], 10) * 12 + MESES_PT[m[1]];
+    }
+
     function renderPortfolio(lista) {
-        document.getElementById("cv-portfolio").innerHTML = lista.map(c => `
-            <div class="card" id="${c.ID || ''}" data-tech="${(c.Tech || '').replace(/"/g, '&quot;')}">
+        // Ordena do mais recente para o mais antigo. Itens sem data reconhecível ("Em evolução", etc.) ficam no topo.
+        const ordenada = [...lista].sort((a, b) => {
+            const da = parseDataOrdenavel(a.Data);
+            const db = parseDataOrdenavel(b.Data);
+            if (da === null && db === null) return 0;
+            if (da === null) return -1;
+            if (db === null) return 1;
+            return db - da;
+        });
+
+        document.getElementById("cv-portfolio").innerHTML = ordenada.map(c => `
+            <div class="card" id="${c.ID || ''}" data-tech="${(c.Tech || '').replace(/"/g, '&quot;')}" data-date="${(c.Data || '').replace(/"/g, '&quot;')}">
                 <h3>${c.Titulo || ''}</h3>
                 <div class="card-columns">
                     <div class="card-col desafio">
@@ -567,6 +699,7 @@
                 title = title.substring(0, 42) + "...";
             }
             const tech = card.getAttribute("data-tech") || "<i class='fas fa-laptop-code'></i> Solução Técnica";
+            const date = card.getAttribute("data-date") || "";
 
             const summaryItemHTML = `
                 <a href="#${id}" class="mini-card-link">
@@ -579,9 +712,12 @@
             summaryHolder.insertAdjacentHTML('beforeend', summaryItemHTML);
 
             const cardHeaderHTML = `
-                <div class="topo-link-container" style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+                <div class="topo-link-container" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 15px;">
                     <h3 style="margin: 0; font-size: 1.15rem; color: #fff;">${card.querySelector("h3").innerHTML}</h3>
-                    <a href="#portfolio-section" class="btn-link" style="font-size: 0.8rem; font-weight: normal; color: var(--text-muted) !important; white-space: nowrap;"><i class="fas fa-arrow-up"></i> topo</a>
+                    <div style="display: flex; align-items: center; gap: 10px; flex-shrink: 0;">
+                        ${date ? `<span class="card-date">${date}</span>` : ''}
+                        <a href="#portfolio-section" class="btn-link" style="font-size: 0.8rem; font-weight: normal; color: var(--text-muted) !important; white-space: nowrap;"><i class="fas fa-arrow-up"></i> topo</a>
+                    </div>
                 </div>
             `;
             card.querySelector("h3").outerHTML = cardHeaderHTML;
