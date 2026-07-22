@@ -422,6 +422,163 @@
             transform-origin: bottom left;
         }
 
+        /* BOTÃO "PROJETO AO VIVO" (link público real, não print) */
+        .btn-live {
+            display: inline-flex !important;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .live-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #4ade80;
+            box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.6);
+            animation: pulse-dot 1.8s infinite;
+            flex-shrink: 0;
+        }
+
+        @keyframes pulse-dot {
+            0% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.55); }
+            70% { box-shadow: 0 0 0 7px rgba(74, 222, 128, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
+        }
+
+        .link-secundario {
+            font-size: 0.78rem !important;
+            font-weight: 500 !important;
+            color: var(--text-muted) !important;
+        }
+
+        .link-secundario:hover {
+            color: #fff !important;
+            text-shadow: none !important;
+        }
+
+        /* MINIATURA DE PRINT (Google Drive) */
+        .card-thumb-wrap {
+            position: relative;
+            margin: 15px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: zoom-in;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(0, 0, 0, 0.2);
+            line-height: 0;
+        }
+
+        .card-thumb-wrap img {
+            width: 100%;
+            display: block;
+            transition: transform 0.5s var(--transition-smooth);
+        }
+
+        .card-thumb-wrap:hover img {
+            transform: scale(1.035);
+        }
+
+        .card-thumb-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(3px);
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .card-thumb-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent 55%);
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            padding: 12px 14px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card-thumb-wrap:hover .card-thumb-overlay {
+            opacity: 1;
+        }
+
+        .card-thumb-overlay span {
+            color: #fff;
+            font-size: 0.8rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* LIGHTBOX (visualização ampliada do print) */
+        .lightbox-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(6, 10, 20, 0.92);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            padding: 40px;
+            cursor: zoom-out;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease;
+        }
+
+        .lightbox-overlay.ativo {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .lightbox-overlay img {
+            max-width: 90vw;
+            max-height: 85vh;
+            border-radius: 8px;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6);
+            cursor: default;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-size: 2.2rem;
+            line-height: 1;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+
+        .lightbox-close:hover { opacity: 1; }
+
+        .lightbox-caption {
+            position: absolute;
+            bottom: 22px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 0.85rem;
+            text-align: center;
+            max-width: 80vw;
+        }
+
+        @media print {
+            .card-thumb-wrap, .lightbox-overlay { display: none !important; }
+        }
+
         /* CONFIGURAÇÃO DE IMPRESSÃO */
         @media print {
             body { background: white !important; color: #24292e !important; }
@@ -520,6 +677,12 @@
 
         <div id="cv-portfolio"></div>
     </section>
+</div>
+
+<div class="lightbox-overlay" id="lightbox" onclick="fecharLightbox(event)">
+    <span class="lightbox-close" onclick="fecharLightbox(event)">&times;</span>
+    <img id="lightbox-img" src="" alt="">
+    <div class="lightbox-caption" id="lightbox-caption"></div>
 </div>
 
 <footer style="text-align: center; padding: 2rem; color: #777; font-size: 0.8rem;">
@@ -647,10 +810,48 @@
         return typeof str === 'string' && /^#[0-9a-fA-F]{6}$/.test(str.trim());
     }
 
+    // Detecta se um link é de um arquivo do Google Drive e extrai o ID do arquivo.
+    // Reconhece os formatos: /file/d/ID/..., ?id=ID, /d/ID
+    function extrairIdDrive(link) {
+        if (!link) return null;
+        const m = String(link).match(/\/d\/([a-zA-Z0-9_-]{15,})/) || String(link).match(/[?&]id=([a-zA-Z0-9_-]{15,})/);
+        return m ? m[1] : null;
+    }
+
+    // Monta o bloco de link/mídia de cada card: miniatura clicável (print do Drive) ou botão "ao vivo" (link externo).
+    function montarBlocoLink(c) {
+        if (!c.Link) return { thumb: '', acao: '<span></span>' };
+
+        const driveId = extrairIdDrive(c.Link);
+
+        if (driveId) {
+            const thumbSrc = `https://drive.google.com/thumbnail?id=${driveId}&sz=w1000`;
+            const fullSrc = `https://drive.google.com/thumbnail?id=${driveId}&sz=w1600`;
+            const legenda = (c.Titulo || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
+            const fallbackId = 'fallback-' + (c.ID || driveId);
+            const thumb = `
+                <div class="card-thumb-wrap" onclick="abrirLightbox('${fullSrc}', '${legenda}')">
+                    <span class="card-thumb-badge"><i class="fas fa-camera"></i> Print do sistema</span>
+                    <img src="${thumbSrc}" loading="lazy" alt="Print de ${c.Titulo || ''}"
+                         onerror="this.closest('.card-thumb-wrap').style.display='none'; var f=document.getElementById('${fallbackId}'); if(f) f.style.display='inline-block';">
+                    <div class="card-thumb-overlay"><span><i class="fas fa-expand"></i> Clique para ampliar</span></div>
+                </div>
+            `;
+            const acao = `<a id="${fallbackId}" href="${c.Link}" class="btn-link link-secundario" target="_blank" style="display:none;">${c.LinkLabel || 'Abrir no Drive ↗'}</a>
+                <a href="${c.Link}" class="btn-link link-secundario" target="_blank"><i class="fas fa-up-right-from-square"></i> Abrir original no Drive</a>`;
+            return { thumb, acao };
+        }
+
+        // Link externo real (não é print) — botão de destaque com indicador "ao vivo"
+        const acao = `<a href="${c.Link}" class="btn-link btn-live" target="_blank"><span class="live-dot"></span> ${c.LinkLabel || 'Acessar projeto ao vivo →'}</a>`;
+        return { thumb: '', acao };
+    }
+
     function renderPortfolio(lista) {
         // Mantém a ordem das linhas exatamente como está na planilha (aba Portfolio).
         document.getElementById("cv-portfolio").innerHTML = lista.map((c, i) => {
             const cor = corValida(c.Cor) ? c.Cor.trim() : PALETA_CORES[i % PALETA_CORES.length];
+            const { thumb, acao } = montarBlocoLink(c);
             return `
             <div class="card" id="${c.ID || ''}" data-tech="${(c.Tech || '').replace(/"/g, '&quot;')}" data-date="${(c.Data || '').replace(/"/g, '&quot;')}" data-accent="${cor}" style="--card-accent: ${cor};">
                 <h3>${c.Titulo || ''}</h3>
@@ -668,14 +869,35 @@
                         <p>${c.Resultado || ''}</p>
                     </div>
                 </div>
+                ${thumb}
                 <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-top: 15px;">
                     ${c.Badge ? `<span class="badge" style="margin: 0;">${c.Badge}</span>` : '<span></span>'}
-                    ${c.Link ? `<a href="${c.Link}" class="btn-link" target="_blank">${c.LinkLabel || 'Acessar →'}</a>` : ''}
+                    ${acao}
                 </div>
             </div>
         `;
         }).join("");
     }
+
+    // Lightbox: abre/fecha a visualização ampliada do print
+    function abrirLightbox(src, legenda) {
+        const overlay = document.getElementById("lightbox");
+        document.getElementById("lightbox-img").src = src;
+        document.getElementById("lightbox-caption").innerText = legenda || "";
+        overlay.classList.add("ativo");
+        document.body.style.overflow = "hidden";
+    }
+
+    function fecharLightbox(event) {
+        if (event && event.target && event.target.tagName === "IMG") return; // clique na própria imagem não fecha
+        const overlay = document.getElementById("lightbox");
+        overlay.classList.remove("ativo");
+        document.body.style.overflow = "";
+    }
+
+    document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") fecharLightbox();
+    });
 
     // ENGENHARIA DE AUTOMAÇÃO DO PORTFÓLIO:
     // Roda depois que os cards são renderizados a partir do data.json e monta o Sumário Dinâmico sozinho.
