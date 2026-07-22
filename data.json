@@ -260,7 +260,7 @@
       "Solucao": "Engenharia de um fluxo de ETL (Extração, Transformação e Carga) 100% autônomo. O script monitora o Gmail, captura os anexos, realiza a conversão de Excel para Google Planilhas, limpa/estrutura as tabelas logicamente através de código e integra tudo ao Google Data Studio utilizando acionadores de tempo automatizados.",
       "Resultado": "Ativo desde agosto de 2024, o projeto eliminou completamente o trabalho manual de tratamento de dados sensíveis e gerou um painel dinâmico e auditável, democratizando o acesso às informações de execução orçamentária de uma instituição pública federal de forma clara e acessível.",
       "Badge": "",
-      "Link": "https://datastudio.google.com/u/0/reporting/2d004452-b28a-4809-bb74-dc3df62db6fc/page/p_gtv8qv5ckd",
+      "Link": "https://datastudio.google.com/u/0/reporting/2d004452-b28a-4809-bb74-dc3df62db6fc/page/p_gtv8qv5ckd; https://drive.google.com/file/d/1P38Amar2XQUIoeXJvoN1vz0rvfMkdt79/view?usp=drive_link; https://drive.google.com/file/d/1CUnkYKHjQQrorFed8094ooPv3Hf1OGSD/view?usp=drive_link",
       "LinkLabel": "Visualizar Painel de BI →"
     },
     {
