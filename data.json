@@ -273,7 +273,7 @@
       "Solucao": "Desenvolvimento de uma solução baseada em web scraping (raspagem de dados), utilizando Selenium e Python. Com poucos cliques, os dados são extraídos automaticamente e integrados, em tempo real, ao Google Planilhas e ao Google Data Studio, possibilitando a construção de painéis dinâmicos e interativos.",
       "Resultado": "Ativo desde dezembro de 2024, o projeto vem sendo continuamente aprimorado. Atualmente, o painel disponibiliza indicadores consolidados de cada PPG, filtros interativos para emissão de relatórios personalizados, estatísticas relacionadas aos prazos de defesa, além de exibição de listagem de estudantes com prazos vencidos ou próximos do vencimento. As informações referentes a novos ingressantes, alterações de situação acadêmica, datas de defesa e homologação são atualizadas diariamente. Já os dados relativos a prazos de vencimento são atualizados quinzenalmente, em razão da menor necessidade de atualização contínua.",
       "Badge": "",
-      "Link": "https://drive.google.com/file/d/1x5QfRUlnZBkjBPdR_88IyeFN_XFl0JxJ/view?usp=drive_link",
+      "Link": "https://drive.google.com/file/d/1x5QfRUlnZBkjBPdR_88IyeFN_XFl0JxJ/view?usp=drive_link; https://drive.google.com/file/d/1qhr0j-36xVdG99Q_nPWl3LakHWDXFOj_/view?usp=drive_link; https://drive.google.com/file/d/1g-saHVX00Xj7dxWSi7gymk3E4chSx_0V/view?usp=drive_link; https://drive.google.com/file/d/1MDryXyr657LxIg_icsFmyUZ_XKJegETX/view?usp=drive_link",
       "LinkLabel": "Visualizar Print de parte do Painel →"
     }
   ]
