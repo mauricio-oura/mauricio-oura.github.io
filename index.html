@@ -456,10 +456,35 @@
             text-shadow: none !important;
         }
 
-        /* MINIATURA DE PRINT (Google Drive) */
+        /* GALERIA DE PRINTS (Google Drive) — suporta 1 ou várias imagens por card */
+        .card-thumb-section {
+            margin: 15px 0;
+        }
+
+        .card-thumb-badge-standalone {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .card-thumb-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+        }
+
+        .card-thumb-grid.unico {
+            grid-template-columns: 1fr;
+        }
+
         .card-thumb-wrap {
             position: relative;
-            margin: 15px 0;
             border-radius: 8px;
             overflow: hidden;
             cursor: zoom-in;
@@ -468,32 +493,23 @@
             line-height: 0;
         }
 
+        .card-thumb-grid:not(.unico) .card-thumb-wrap {
+            aspect-ratio: 4 / 3;
+        }
+
         .card-thumb-wrap img {
             width: 100%;
             display: block;
             transition: transform 0.5s var(--transition-smooth);
         }
 
-        .card-thumb-wrap:hover img {
-            transform: scale(1.035);
+        .card-thumb-grid:not(.unico) .card-thumb-wrap img {
+            height: 100%;
+            object-fit: cover;
         }
 
-        .card-thumb-badge {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background: rgba(15, 23, 42, 0.85);
-            backdrop-filter: blur(3px);
-            color: #fff;
-            font-size: 0.7rem;
-            font-weight: 600;
-            padding: 4px 10px;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
+        .card-thumb-wrap:hover img {
+            transform: scale(1.035);
         }
 
         .card-thumb-overlay {
@@ -521,7 +537,7 @@
             gap: 6px;
         }
 
-        /* LIGHTBOX (visualização ampliada do print) */
+        /* LIGHTBOX (visualização ampliada do print, com navegação entre várias imagens) */
         .lightbox-overlay {
             position: fixed;
             inset: 0;
@@ -560,9 +576,48 @@
             cursor: pointer;
             opacity: 0.8;
             transition: opacity 0.2s;
+            z-index: 2;
         }
 
         .lightbox-close:hover { opacity: 1; }
+
+        .lightbox-contador {
+            position: absolute;
+            top: 22px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.8rem;
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            transform: translateY(-50%);
+            display: none;
+            justify-content: space-between;
+            padding: 0 20px;
+            pointer-events: none;
+        }
+
+        .lightbox-nav button {
+            pointer-events: auto;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #fff;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            font-size: 1.4rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .lightbox-nav button:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
 
         .lightbox-caption {
             position: absolute;
@@ -576,7 +631,7 @@
         }
 
         @media print {
-            .card-thumb-wrap, .lightbox-overlay { display: none !important; }
+            .card-thumb-section, .lightbox-overlay { display: none !important; }
         }
 
         /* CONFIGURAÇÃO DE IMPRESSÃO */
@@ -681,7 +736,12 @@
 
 <div class="lightbox-overlay" id="lightbox" onclick="fecharLightbox(event)">
     <span class="lightbox-close" onclick="fecharLightbox(event)">&times;</span>
+    <span class="lightbox-contador" id="lightbox-contador"></span>
     <img id="lightbox-img" src="" alt="">
+    <div class="lightbox-nav" id="lightbox-nav">
+        <button onclick="lightboxAnterior(event)" aria-label="Imagem anterior">&#8249;</button>
+        <button onclick="lightboxProxima(event)" aria-label="Próxima imagem">&#8250;</button>
+    </div>
     <div class="lightbox-caption" id="lightbox-caption"></div>
 </div>
 
@@ -818,33 +878,66 @@
         return m ? m[1] : null;
     }
 
-    // Monta o bloco de link/mídia de cada card: miniatura clicável (print do Drive) ou botão "ao vivo" (link externo).
+    // Monta o bloco de link/mídia de cada card a partir do campo Link, que pode conter vários
+    // endereços separados por ";". Cada pedaço é classificado individualmente: link do Drive vira
+    // miniatura na galeria; qualquer outro link vira botão "ao vivo". Os dois podem coexistir.
     function montarBlocoLink(c) {
         if (!c.Link) return { thumb: '', acao: '<span></span>' };
 
-        const driveId = extrairIdDrive(c.Link);
+        const partes = String(c.Link).split(';').map(s => s.trim()).filter(Boolean);
+        const thumbs = [];   // { url, driveId }
+        const vivos = [];    // url
 
-        if (driveId) {
-            const thumbSrc = `https://drive.google.com/thumbnail?id=${driveId}&sz=w1000`;
-            const fullSrc = `https://drive.google.com/thumbnail?id=${driveId}&sz=w1600`;
-            const legenda = (c.Titulo || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
-            const fallbackId = 'fallback-' + (c.ID || driveId);
-            const thumb = `
-                <div class="card-thumb-wrap" onclick="abrirLightbox('${fullSrc}', '${legenda}')">
-                    <span class="card-thumb-badge"><i class="fas fa-camera"></i> Print do sistema</span>
-                    <img src="${thumbSrc}" loading="lazy" alt="Print de ${c.Titulo || ''}"
-                         onerror="this.closest('.card-thumb-wrap').style.display='none'; var f=document.getElementById('${fallbackId}'); if(f) f.style.display='inline-block';">
-                    <div class="card-thumb-overlay"><span><i class="fas fa-expand"></i> Clique para ampliar</span></div>
+        partes.forEach(url => {
+            const driveId = extrairIdDrive(url);
+            if (driveId) {
+                thumbs.push({ url, driveId });
+            } else {
+                vivos.push(url);
+            }
+        });
+
+        let thumb = '';
+        if (thumbs.length > 0) {
+            const galeriaFull = thumbs.map(t => `https://drive.google.com/thumbnail?id=${t.driveId}&sz=w1600`);
+            const galeriaJson = JSON.stringify(galeriaFull).replace(/"/g, '&quot;');
+            const legenda = (c.Titulo || '').replace(/"/g, '&quot;');
+            const badgeTexto = thumbs.length > 1 ? `Prints do sistema (${thumbs.length})` : 'Print do sistema';
+
+            const itens = thumbs.map((t, i) => {
+                const thumbSrc = `https://drive.google.com/thumbnail?id=${t.driveId}&sz=w1000`;
+                const fallbackId = `fallback-${(c.ID || t.driveId)}-${i}`;
+                return `
+                    <div class="card-thumb-wrap" onclick='abrirLightbox(${galeriaJson}, ${i}, "${legenda}")'>
+                        <img src="${thumbSrc}" loading="lazy" alt="Print ${i + 1} de ${c.Titulo || ''}"
+                             onerror="this.closest('.card-thumb-wrap').style.display='none'; var f=document.getElementById('${fallbackId}'); if(f) f.style.display='inline-block';">
+                        <div class="card-thumb-overlay"><span><i class="fas fa-expand"></i> Ampliar</span></div>
+                    </div>
+                    <a id="${fallbackId}" href="${t.url}" class="btn-link link-secundario" target="_blank" style="display:none; margin-right: 10px;">Ver imagem ${i + 1} no Drive ↗</a>
+                `;
+            }).join('');
+
+            thumb = `
+                <div class="card-thumb-section">
+                    <span class="card-thumb-badge-standalone"><i class="fas fa-camera"></i> ${badgeTexto}</span>
+                    <div class="card-thumb-grid ${thumbs.length === 1 ? 'unico' : ''}">${itens}</div>
                 </div>
             `;
-            const acao = `<a id="${fallbackId}" href="${c.Link}" class="btn-link link-secundario" target="_blank" style="display:none;">${c.LinkLabel || 'Abrir no Drive ↗'}</a>
-                <a href="${c.Link}" class="btn-link link-secundario" target="_blank"><i class="fas fa-up-right-from-square"></i> Abrir original no Drive</a>`;
-            return { thumb, acao };
         }
 
-        // Link externo real (não é print) — botão de destaque com indicador "ao vivo"
-        const acao = `<a href="${c.Link}" class="btn-link btn-live" target="_blank"><span class="live-dot"></span> ${c.LinkLabel || 'Acessar projeto ao vivo →'}</a>`;
-        return { thumb: '', acao };
+        let acao;
+        if (vivos.length > 0) {
+            acao = vivos.map((url, i) => {
+                const texto = (i === 0 && c.LinkLabel) ? c.LinkLabel : 'Acessar projeto ao vivo →';
+                return `<a href="${url}" class="btn-link btn-live" target="_blank"><span class="live-dot"></span> ${texto}</a>`;
+            }).join(' &nbsp; ');
+        } else if (thumbs.length === 1) {
+            acao = `<a href="${thumbs[0].url}" class="btn-link link-secundario" target="_blank"><i class="fas fa-up-right-from-square"></i> Abrir original no Drive</a>`;
+        } else {
+            acao = '<span></span>';
+        }
+
+        return { thumb, acao };
     }
 
     function renderPortfolio(lista) {
@@ -879,13 +972,38 @@
         }).join("");
     }
 
-    // Lightbox: abre/fecha a visualização ampliada do print
-    function abrirLightbox(src, legenda) {
-        const overlay = document.getElementById("lightbox");
-        document.getElementById("lightbox-img").src = src;
+    // Lightbox: abre/fecha a visualização ampliada, com navegação quando há mais de uma imagem
+    let lightboxImagens = [];
+    let lightboxIndice = 0;
+
+    function abrirLightbox(imagens, indice, legenda) {
+        lightboxImagens = Array.isArray(imagens) ? imagens : [imagens];
+        lightboxIndice = indice || 0;
         document.getElementById("lightbox-caption").innerText = legenda || "";
+        document.getElementById("lightbox-nav").style.display = lightboxImagens.length > 1 ? "flex" : "none";
+        atualizarImagemLightbox();
+        const overlay = document.getElementById("lightbox");
         overlay.classList.add("ativo");
         document.body.style.overflow = "hidden";
+    }
+
+    function atualizarImagemLightbox() {
+        document.getElementById("lightbox-img").src = lightboxImagens[lightboxIndice];
+        document.getElementById("lightbox-contador").innerText = lightboxImagens.length > 1
+            ? (lightboxIndice + 1) + " / " + lightboxImagens.length
+            : "";
+    }
+
+    function lightboxProxima(event) {
+        if (event) event.stopPropagation();
+        lightboxIndice = (lightboxIndice + 1) % lightboxImagens.length;
+        atualizarImagemLightbox();
+    }
+
+    function lightboxAnterior(event) {
+        if (event) event.stopPropagation();
+        lightboxIndice = (lightboxIndice - 1 + lightboxImagens.length) % lightboxImagens.length;
+        atualizarImagemLightbox();
     }
 
     function fecharLightbox(event) {
@@ -896,7 +1014,11 @@
     }
 
     document.addEventListener("keydown", function (e) {
+        const overlay = document.getElementById("lightbox");
+        if (!overlay || !overlay.classList.contains("ativo")) return;
         if (e.key === "Escape") fecharLightbox();
+        if (e.key === "ArrowRight") lightboxProxima();
+        if (e.key === "ArrowLeft") lightboxAnterior();
     });
 
     // ENGENHARIA DE AUTOMAÇÃO DO PORTFÓLIO:
