@@ -1,6 +1,6 @@
 {
   "header": {
-    "nome": "MAURICIO MASSAO OURA",
+    "nome": "Mauricio Massao Oura",
     "subtitulo": "Automação de Atividades | Business Intelligence - BI | Dashboards Dinâmicos",
     "email": "mauricio.oura@gmail.com",
     "githubLabel": "github.com/mauricio-oura",
@@ -8,26 +8,27 @@
     "lattesUrl": "http://lattes.cnpq.br/8200289301250947",
     "localizacao": "Guarulhos, SP"
   },
-  "resumo": "Sou um professional focado na automação de atividades e democratização da informação por meio do uso de tecnologias livres. Com uma visão estratégica moldada pelo Doutorado em Administração, atuo na modernização do serviço público utilizando <b>Inteligência Artificial como força multiplicadora</b>. Desenvolvo automações com Python e Google Apps Script assistidas por IA para converter atividades burocráticas em soluções ágeis, transparentes e de alto impacto.",
+  "posicionamento": "Não tenho formação em desenvolvimento de software — sou administrador de formação, com doutorado na área. As soluções deste portfólio nasceram do encontro entre conhecimento profundo de processos da gestão pública, criatividade para propor soluções e uso estratégico de Inteligência Artificial como parceira de programação.",
+  "resumo": "Sou um professional focado na automação de atividades e democratização da informação por meio do uso de tecnologias livres ou de baixo custo. Com uma visão estratégica moldada pelo Doutorado em Administração, atuo na modernização do serviço público utilizando <b>Inteligência Artificial como força multiplicadora</b>. Desenvolvo automações com Python e Google Apps Script assistidas por IA para converter atividades burocráticas em soluções ágeis, transparentes e de alto impacto.",
   "formacao": [
     {
       "Titulo": "Doutorado em Administração",
-      "Ano": "2014",
+      "Ano": 2014,
       "Instituicao": "Uninove, SP"
     },
     {
       "Titulo": "Mestrado em Administração",
-      "Ano": "2008",
+      "Ano": 2008,
       "Instituicao": "Uninove, SP"
     },
     {
       "Titulo": "Bacharelado em Administração (com Habilitação em Comércio Exterior)",
-      "Ano": "2004",
+      "Ano": 2004,
       "Instituicao": "Torricelli, SP"
     },
     {
       "Titulo": "Certificação em Liderança",
-      "Ano": "2015",
+      "Ano": 2015,
       "Instituicao": "FGV/SP"
     }
   ],
@@ -40,8 +41,7 @@
     "Comércio Exterior",
     "Sistema SEI!",
     "Linux",
-    "Joomla",
-    "Planilhas automatizadas"
+    "Joomla"
   ],
   "softSkills": [
     "Resolução de Problemas",
@@ -55,6 +55,24 @@
     "Espanhol (avançado)",
     "Japonês (Intermediário)",
     "Francês (Básico)"
+  ],
+  "estatisticas": [
+    {
+      "Valor": "40+",
+      "Label": "Ferramentas desenvolvidas"
+    },
+    {
+      "Valor": "8+",
+      "Label": "Anos automatizando processos públicos"
+    },
+    {
+      "Valor": 9,
+      "Label": "Soluções em produção no portfólio"
+    },
+    {
+      "Valor": 1,
+      "Label": "Low-cost, sem licenças pagas"
+    }
   ],
   "premios": [
     {
