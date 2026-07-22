@@ -13,22 +13,22 @@
   "formacao": [
     {
       "Titulo": "Doutorado em Administração",
-      "Ano": 2014,
+      "Ano": "2014",
       "Instituicao": "Uninove, SP"
     },
     {
       "Titulo": "Mestrado em Administração",
-      "Ano": 2008,
+      "Ano": "2008",
       "Instituicao": "Uninove, SP"
     },
     {
       "Titulo": "Bacharelado em Administração (com Habilitação em Comércio Exterior)",
-      "Ano": 2004,
+      "Ano": "2004",
       "Instituicao": "Torricelli, SP"
     },
     {
       "Titulo": "Certificação em Liderança",
-      "Ano": 2015,
+      "Ano": "2015",
       "Instituicao": "FGV/SP"
     }
   ],
@@ -66,11 +66,11 @@
       "Label": "Anos automatizando processos públicos"
     },
     {
-      "Valor": 9,
+      "Valor": "9",
       "Label": "Soluções em produção no portfólio"
     },
     {
-      "Valor": 1,
+      "Valor": "100%",
       "Label": "Low-cost, sem licenças pagas"
     }
   ],
