@@ -234,7 +234,7 @@
       "Solucao": "Desenvolvimento de uma ferramenta em Python utilizando a biblioteca Streamlit, integrada automaticamente ao Google Drive. A aplicação permite ao usuário informar a URL da página a ser processada e, opcionalmente, definir uma palavra-chave para delimitar o ponto a partir do qual os arquivos deverão ser identificados e baixados.",
       "Resultado": "Desenvolvida em novembro de 2025, a ferramenta automatiza o processo de extração e migração de arquivos. Após a execução, os documentos são baixados diretamente da página web e armazenados em uma pasta no Google Drive. Simultaneamente, o sistema gera uma planilha contendo a listagem dos textos identificados e seus respectivos links para os arquivos armazenados no Drive. A solução reduziu significativamente o trabalho manual de migração, proporcionando maior agilidade, rastreabilidade e organização no processo de atualização do portal institucional.",
       "Badge": "",
-      "Link": "https://drive.google.com/file/d/1rzWP7Gy-yuNL3Qo8PohUrfhud4uFiLId/view?usp=drive_link",
+      "Link": "https://drive.google.com/file/d/1Y_qhEkR0x-hJ9xou66jKlxapK3pgI_7Q/view?usp=drive_link; https://drive.google.com/file/d/1PYWG9o_VVeBs9_8OAEKMIy4QVvLtUWMA/view?usp=drive_link; https://drive.google.com/file/d/1woPgyQPxXW8PL3d9LjVnKy8WhQIcotQ5/view?usp=drive_link",
       "LinkLabel": "Acessar print do App →"
     },
     {
@@ -247,7 +247,7 @@
       "Solucao": "Desenvolvimento de uma solução automática baseada em web scraping (raspagem de dados), utilizando Selenium e Python. Com alguns cliques, os dados são extraídos automaticamente e integrados, em tempo real, ao Google Planilhas. Os dados são disponibilizados em um WebApp publicado por meio do Google Apps Script. A configuração de permissões de acesso é feita pelo próprio gestor da unidade, em aba própria da planilha.",
       "Resultado": "Lançado em setembro de 2025, o Web App apresenta um visual \"clean\" e permite a geração de listas personalizadas de e-mails, em poucos segundos, de forma automatizada. Além de manter os dados permanentemente atualizados, a ferramenta oferece filtros dinâmicos de alto desempenho, possibilitando segmentações por curso, situação acadêmica, nível e ano de ingresso. A solução reduziu significativamente o tempo necessário para preparação de comunicações institucionais, ampliando a precisão das listas e facilitando a gestão da comunicação com diferentes públicos acadêmicos. A ferramenta dispensa a existência de várias planilhas em cada PPG.",
       "Badge": "<i class=\"fas fa-microchip\"></i> Solução Interna de Alta Eficiência",
-      "Link": "https://drive.google.com/file/d/1Fn_UYxo38k8dOMbK2W5x5V36wdSn4MFr/view?usp=sharing",
+      "Link": "https://drive.google.com/file/d/14mhuhaBXLjFZhnyTPLgcWP739v9_o5EA/view?usp=drive_link; https://drive.google.com/file/d/1zn4QGiIPsJENlwsvBEpN_rto98elfdQF/view?usp=drive_link",
       "LinkLabel": "Acessar print do WebApp →"
     },
     {
