@@ -147,17 +147,43 @@
       "LinkLabel": ""
     },
     {
-      "ID": "gestao-bancas-ppge",
-      "Titulo": "Sistema de Gestão de Prazos, Bancas e Diplomas | PPGE",
-      "Tech": "<i class='fas fa-laptop-code'></i> Streamlit + Google APIs",
-      "Data": "dez./2025",
+      "ID": "atendimento-adm-gru",
+      "Titulo": "Sistema de divulgação de escalas de atendimento",
+      "Tech": "<i class='fas fa-file-code'></i> Google Apps Script\n<i class='fas fa-globe'></i> WebApp (HTML/CSS/JS)\n<i class='fab fa-github'></i> GitHub Pages + API\n<i class='fas fa-user-shield'></i> Controle de Acesso por Papel\n<i class='fas fa-clock'></i> Automação (Triggers)\n<i class='fas fa-shield-alt'></i> Privacy by Design",
+      "Data": "jul./2026",
       "Cor": "",
-      "Desafio": "Gerenciar manualmente os processos acadêmicos de um Programa de Pós-Graduação — bancas, prazos, homologações, diplomas e lançamentos na Plataforma Sucupira — distribuídos em múltiplas planilhas sem integração entre si, com risco de perda de prazos, retrabalho e inconsistência de dados entre secretarias.",
-      "Solucao": "Desenvolvimento de um sistema web completo em Google Apps Script, integrado ao ecossistema Google (Sheets, Drive, Gmail, Calendar). O sistema consolida dados cadastrais de alunos e pesquisadores, bancas, prazos e contatos em uma interface com cinco módulos: Dashboard de mestrandos e doutorandos com semáforo de prazos, painel de Pós-Doutorado com alertas de vencimento, Follow-up de atas/homologações/diplomas, rastreamento da Plataforma Sucupira com detecção automática de eventos acadêmicos (matrícula, trancamento, finalização, troca de orientador) e histórico de Egressos. Inclui geração automática de atas de banca, agendamento no Google Calendar, criação de rascunhos de e-mail via API, geração de documentos institucionais a partir de templates em Google Docs (declarações, ofícios e checklists preenchidos automaticamente com dados da banca), exportação CSV e cache de sessão para performance.",
-      "Resultado": "Implementado a partir de dezembro de 2025, inicialmente, como projeto Python/Streamlit, proporcionou a substituição do controle manual fragmentado por um painel único que centraliza várias pendências institucionais com alertas visuais, rastreamento histórico e atualização automática a cada 6 horas. A secretaria passou a ter visibilidade em tempo real sobre um acervo de 800+ matrículas, com pendências organizadas por tipo e prioridade, reduzindo significativamente o risco de perda de prazos e o tempo gasto em consultas a múltiplas planilhas.",
-      "Badge": "<i class=\"fas fa-microchip\"></i> Solução Interna de Alta Eficiência",
-      "Link": "https://drive.google.com/file/d/1uAkksmpuuMENPwHt6oNsozxfcNbMfq5z/view?usp=drive_link",
-      "LinkLabel": "Visualizar Print do Sistema →"
+      "Desafio": "O Departamento Administrativo de uma universidade publicava horários e forma de atendimento de 13 setores em um painel de Data Studio alimentado manualmente, sem vínculo com a situação real de férias/afastamentos dos servidores — exigindo atualização manual constante e sem garantia de que o público estivesse vendo dados confiáveis sobre quem realmente estaria presencial em cada dia.",
+      "Solucao": "Arquitetei e desenvolvi, do zero, uma solução full-stack sobre Google Apps Script e GitHub Pages: um Web App com controle de acesso por papel (admin/servidor, com suporte a acúmulo de papéis), CRUD de setores e servidores com vínculos N:N, cadastro self-service de horários e afastamentos, e um pipeline de publicação que pré-calcula no servidor — sem nunca expor o calendário de ausências publicamente — uma programação de atendimento presencial para duas semanas, sincronizada automaticamente com um site público responsivo (HTML/CSS/JS) hospedado no GitHub Pages, com QR code de acesso e atualização diária automatizada via gatilho de tempo.",
+      "Resultado": "Desenvolvido em julho de 2026, possibilitou a substituição integral de um painel estático e manual por um sistema vivo, auditável (com painel de conferência de preenchimento) e seguro por design (dados sensíveis de RH nunca trafegam ao público), reduzindo a carga operacional de atualização manual e aumentando a confiabilidade da informação exposta a docentes, discentes e comunidade externa sobre a disponibilidade real de atendimento presencial por setor.",
+      "Badge": "",
+      "Link": "https://mauriciooura-a11yke.github.io/adm-gru/",
+      "LinkLabel": "Visualizar o site →"
+    },
+    {
+      "ID": "controle-financeiro-webapp",
+      "Titulo": "Sistema de Controle Financeiro Pessoal | WebApp",
+      "Tech": "<i class='fas fa-wallet'></i> WebApp + Apps Script",
+      "Data": "jul./2026",
+      "Cor": "",
+      "Desafio": "Controle financeiro pessoal e familiar disperso em múltiplas contas, cartões e categorias, sem visibilidade consolidada de fluxo de caixa, orçamento planejado vs. realizado e projeção de saldo futuro — dependente de planilhas manuais de difícil manutenção e acesso apenas via desktop.",
+      "Solucao": "Desenvolvimento de um painel financeiro web completo (Google Apps Script + Google Sheets como backend), com:\nDashboard mobile-first com KPIs de saldo híbrido, cobertura patrimonial e desvio vs. planejado\nMódulos de lançamento rápido (conta e cartão), projeção de despesas recorrentes e edição/exclusão em lote\nPlanejamento orçamentário integrado (despesas fixas/variáveis vs. renda) com edição direta na mesma visualização\nInterface responsiva (tabela no desktop, cards no mobile) e sistema de autenticação por PIN",
+      "Resultado": "Aplicação em uso ativo e evolução contínua (mais de 15 versões incrementais entregues), substituindo controle manual por uma ferramenta única de acesso multiplataforma, com correções de performance e usabilidade guiadas por feedback de uso real (ex.: eliminação de bugs de renderização mobile, consolidação de telas redundantes e simplificação de fluxos de lançamento).",
+      "Badge": "<i class=\"fas fa-lock\"></i> Uso Pessoal / Produtividade",
+      "Link": "https://drive.google.com/file/d/10Xuorm3jcWk8bd9x2w-pYg7bkTAESowS/view?usp=drive_link",
+      "LinkLabel": "Visualizar Print do Programa →"
+    },
+    {
+      "ID": "agenda-bancas",
+      "Titulo": "Painel de divulgação de Agenda de Bancas",
+      "Tech": "<i class='fas fa-calendar-alt'></i> Sincronização BI",
+      "Data": "maio/2026",
+      "Cor": "",
+      "Desafio": "Dar publicidade oficial e transparente à agenda de bancas do PPG em Educação diretamente no site da instituição, eliminando retrabalhos, atrasos na comunicação e a necessidade de espaços físicos ou processos manuais adicionais.",
+      "Solucao": "Criação de uma ponte automatizada baseada em BI que lê em tempo real os dados da planilha de controle interno já utilizada pela secretaria do PPGE. À medida que um agendamento é validado internamente, a informação é transmitida e sincronizada de forma imediata e sem atrito humano.",
+      "Resultado": "Lançado em maio de 2026, o painel garantiu transparência activa para a sociedade, permitindo que os alunos acompanhem de forma autônoma a homologação dos seus pedidos e assegurando o cumprimento dos atos de publicidade da secretaria sem demandar esforço ou tempo operacional extra da equipe.",
+      "Badge": "",
+      "Link": "https://datastudio.google.com/u/0/reporting/322acdc7-ed75-4c08-8a70-a9c9cbf9c33c/page/rUZxF",
+      "LinkLabel": "Acessar o Painel →"
     },
     {
       "ID": "portal-conhecimento",
@@ -171,6 +197,45 @@
       "Badge": "",
       "Link": "https://drive.google.com/file/d/1Y4JfEOaXOpBuyu0OTLiUwavdpPgqvPz_/view?usp=drive_link",
       "LinkLabel": "Visualizar Print do Sistema →"
+    },
+    {
+      "ID": "gestao-bancas-ppge",
+      "Titulo": "Sistema de Gestão de Prazos, Bancas e Diplomas | PPGE",
+      "Tech": "<i class='fas fa-laptop-code'></i> Streamlit + Google APIs",
+      "Data": "dez./2025",
+      "Cor": "",
+      "Desafio": "Gerenciar manualmente os processos acadêmicos de um Programa de Pós-Graduação — bancas, prazos, homologações, diplomas e lançamentos na Plataforma Sucupira — distribuídos em múltiplas planilhas sem integração entre si, com risco de perda de prazos, retrabalho e inconsistência de dados entre secretarias.",
+      "Solucao": "Desenvolvimento de um sistema web completo em Google Apps Script, integrado ao ecossistema Google (Sheets, Drive, Gmail, Calendar). O sistema consolida dados cadastrais de alunos e pesquisadores, bancas, prazos e contatos em uma interface com cinco módulos: Dashboard de mestrandos e doutorandos com semáforo de prazos, painel de Pós-Doutorado com alertas de vencimento, Follow-up de atas/homologações/diplomas, rastreamento da Plataforma Sucupira com detecção automática de eventos acadêmicos (matrícula, trancamento, finalização, troca de orientador) e histórico de Egressos. Inclui geração automática de atas de banca, agendamento no Google Calendar, criação de rascunhos de e-mail via API, geração de documentos institucionais a partir de templates em Google Docs (declarações, ofícios e checklists preenchidos automaticamente com dados da banca), exportação CSV e cache de sessão para performance.",
+      "Resultado": "Implementado a partir de dezembro de 2025, inicialmente, como projeto Python/Streamlit, proporcionou a substituição do controle manual fragmentado por um painel único que centraliza várias pendências institucionais com alertas visuais, rastreamento histórico e atualização automática a cada 6 horas. A secretaria passou a ter visibilidade em tempo real sobre um acervo de 800+ matrículas, com pendências organizadas por tipo e prioridade, reduzindo significativamente o risco de perda de prazos e o tempo gasto em consultas a múltiplas planilhas.",
+      "Badge": "<i class=\"fas fa-microchip\"></i> Solução Interna de Alta Eficiência",
+      "Link": "https://drive.google.com/file/d/1uAkksmpuuMENPwHt6oNsozxfcNbMfq5z/view?usp=drive_link",
+      "LinkLabel": "Visualizar Print do Sistema →"
+    },
+    {
+      "ID": "migrador-arquivos",
+      "Titulo": "Migrador de Arquivos de Páginas Web para Google Drive",
+      "Tech": "<i class='fas fa-file-import'></i> Streamlit + API",
+      "Data": "nov./2025",
+      "Cor": "",
+      "Desafio": "Migrar arquivos publicados em páginas web para um novo portal institucional, transferindo documentos hospedados nas mídias do Joomla para o Google Drive de forma estruturada e automatizada.",
+      "Solucao": "Desenvolvimento de uma ferramenta em Python utilizando a biblioteca Streamlit, integrada automaticamente ao Google Drive. A aplicação permite ao usuário informar a URL da página a ser processada e, opcionalmente, definir uma palavra-chave para delimitar o ponto a partir do qual os arquivos deverão ser identificados e baixados.",
+      "Resultado": "Desenvolvida em novembro de 2025, a ferramenta automatiza o processo de extração e migração de arquivos. Após a execução, os documentos são baixados diretamente da página web e armazenados em uma pasta no Google Drive. Simultaneamente, o sistema gera uma planilha contendo a listagem dos textos identificados e seus respectivos links para os arquivos armazenados no Drive. A solução reduziu significativamente o trabalho manual de migração, proporcionando maior agilidade, rastreabilidade e organização no processo de atualização do portal institucional.",
+      "Badge": "",
+      "Link": "https://drive.google.com/file/d/1rzWP7Gy-yuNL3Qo8PohUrfhud4uFiLId/view?usp=drive_link",
+      "LinkLabel": "Acessar print do App →"
+    },
+    {
+      "ID": "mailing-list",
+      "Titulo": "WebApp Gerador de Mailing List",
+      "Tech": "<i class='fas fa-envelope-open-text'></i> WebApp + Selenium",
+      "Data": "set./2025",
+      "Cor": "",
+      "Desafio": "Otimizar a atualização de mailing lists e a geração de listas segmentadas para diferentes públicos-alvo.",
+      "Solucao": "Desenvolvimento de uma solução automática baseada em web scraping (raspagem de dados), utilizando Selenium e Python. Com alguns cliques, os dados são extraídos automaticamente e integrados, em tempo real, ao Google Planilhas. Os dados são disponibilizados em um WebApp publicado por meio do Google Apps Script. A configuração de permissões de acesso é feita pelo próprio gestor da unidade, em aba própria da planilha.",
+      "Resultado": "Lançado em setembro de 2025, o Web App apresenta um visual \"clean\" e permite a geração de listas personalizadas de e-mails, em poucos segundos, de forma automatizada. Além de manter os dados permanentemente atualizados, a ferramenta oferece filtros dinâmicos de alto desempenho, possibilitando segmentações por curso, situação acadêmica, nível e ano de ingresso. A solução reduziu significativamente o tempo necessário para preparação de comunicações institucionais, ampliando a precisão das listas e facilitando a gestão da comunicação com diferentes públicos acadêmicos. A ferramenta dispensa a existência de várias planilhas em cada PPG.",
+      "Badge": "<i class=\"fas fa-microchip\"></i> Solução Interna de Alta Eficiência",
+      "Link": "https://drive.google.com/file/d/1Fn_UYxo38k8dOMbK2W5x5V36wdSn4MFr/view?usp=sharing",
+      "LinkLabel": "Acessar print do WebApp →"
     },
     {
       "ID": "execucao-orcamentaria",
@@ -197,71 +262,6 @@
       "Badge": "",
       "Link": "https://drive.google.com/file/d/1x5QfRUlnZBkjBPdR_88IyeFN_XFl0JxJ/view?usp=drive_link",
       "LinkLabel": "Visualizar Print de parte do Painel →"
-    },
-    {
-      "ID": "agenda-bancas",
-      "Titulo": "Painel de divulgação de Agenda de Bancas",
-      "Tech": "<i class='fas fa-calendar-alt'></i> Sincronização BI",
-      "Data": "maio/2026",
-      "Cor": "",
-      "Desafio": "Dar publicidade oficial e transparente à agenda de bancas do PPG em Educação diretamente no site da instituição, eliminando retrabalhos, atrasos na comunicação e a necessidade de espaços físicos ou processos manuais adicionais.",
-      "Solucao": "Criação de uma ponte automatizada baseada em BI que lê em tempo real os dados da planilha de controle interno já utilizada pela secretaria do PPGE. À medida que um agendamento é validado internamente, a informação é transmitida e sincronizada de forma imediata e sem atrito humano.",
-      "Resultado": "Lançado em maio de 2026, o painel garantiu transparência activa para a sociedade, permitindo que os alunos acompanhem de forma autônoma a homologação dos seus pedidos e assegurando o cumprimento dos atos de publicidade da secretaria sem demandar esforço ou tempo operacional extra da equipe.",
-      "Badge": "",
-      "Link": "https://datastudio.google.com/u/0/reporting/322acdc7-ed75-4c08-8a70-a9c9cbf9c33c/page/rUZxF",
-      "LinkLabel": "Acessar o Painel →"
-    },
-    {
-      "ID": "mailing-list",
-      "Titulo": "WebApp Gerador de Mailing List",
-      "Tech": "<i class='fas fa-envelope-open-text'></i> WebApp + Selenium",
-      "Data": "set./2025",
-      "Cor": "",
-      "Desafio": "Otimizar a atualização de mailing lists e a geração de listas segmentadas para diferentes públicos-alvo.",
-      "Solucao": "Desenvolvimento de uma solução automática baseada em web scraping (raspagem de dados), utilizando Selenium e Python. Com alguns cliques, os dados são extraídos automaticamente e integrados, em tempo real, ao Google Planilhas. Os dados são disponibilizados em um WebApp publicado por meio do Google Apps Script. A configuração de permissões de acesso é feita pelo próprio gestor da unidade, em aba própria da planilha.",
-      "Resultado": "Lançado em setembro de 2025, o Web App apresenta um visual \"clean\" e permite a geração de listas personalizadas de e-mails, em poucos segundos, de forma automatizada. Além de manter os dados permanentemente atualizados, a ferramenta oferece filtros dinâmicos de alto desempenho, possibilitando segmentações por curso, situação acadêmica, nível e ano de ingresso. A solução reduziu significativamente o tempo necessário para preparação de comunicações institucionais, ampliando a precisão das listas e facilitando a gestão da comunicação com diferentes públicos acadêmicos. A ferramenta dispensa a existência de várias planilhas em cada PPG.",
-      "Badge": "<i class=\"fas fa-microchip\"></i> Solução Interna de Alta Eficiência",
-      "Link": "https://drive.google.com/file/d/1Fn_UYxo38k8dOMbK2W5x5V36wdSn4MFr/view?usp=sharing",
-      "LinkLabel": "Acessar print do WebApp →"
-    },
-    {
-      "ID": "migrador-arquivos",
-      "Titulo": "Migrador de Arquivos de Páginas Web para Google Drive",
-      "Tech": "<i class='fas fa-file-import'></i> Streamlit + API",
-      "Data": "nov./2025",
-      "Cor": "",
-      "Desafio": "Migrar arquivos publicados em páginas web para um novo portal institucional, transferindo documentos hospedados nas mídias do Joomla para o Google Drive de forma estruturada e automatizada.",
-      "Solucao": "Desenvolvimento de uma ferramenta em Python utilizando a biblioteca Streamlit, integrada automaticamente ao Google Drive. A aplicação permite ao usuário informar a URL da página a ser processada e, opcionalmente, definir uma palavra-chave para delimitar o ponto a partir do qual os arquivos deverão ser identificados e baixados.",
-      "Resultado": "Desenvolvida em novembro de 2025, a ferramenta automatiza o processo de extração e migração de arquivos. Após a execução, os documentos são baixados diretamente da página web e armazenados em uma pasta no Google Drive. Simultaneamente, o sistema gera uma planilha contendo a listagem dos textos identificados e seus respectivos links para os arquivos armazenados no Drive. A solução reduziu significativamente o trabalho manual de migração, proporcionando maior agilidade, rastreabilidade e organização no processo de atualização do portal institucional.",
-      "Badge": "",
-      "Link": "https://drive.google.com/file/d/1rzWP7Gy-yuNL3Qo8PohUrfhud4uFiLId/view?usp=drive_link",
-      "LinkLabel": "Acessar print do App →"
-    },
-    {
-      "ID": "controle-financeiro-webapp",
-      "Titulo": "Sistema de Controle Financeiro Pessoal | WebApp",
-      "Tech": "<i class='fas fa-wallet'></i> WebApp + Apps Script",
-      "Data": "jul./2026",
-      "Cor": "",
-      "Desafio": "Controle financeiro pessoal e familiar disperso em múltiplas contas, cartões e categorias, sem visibilidade consolidada de fluxo de caixa, orçamento planejado vs. realizado e projeção de saldo futuro — dependente de planilhas manuais de difícil manutenção e acesso apenas via desktop.",
-      "Solucao": "Desenvolvimento de um painel financeiro web completo (Google Apps Script + Google Sheets como backend), com:\nDashboard mobile-first com KPIs de saldo híbrido, cobertura patrimonial e desvio vs. planejado\nMódulos de lançamento rápido (conta e cartão), projeção de despesas recorrentes e edição/exclusão em lote\nPlanejamento orçamentário integrado (despesas fixas/variáveis vs. renda) com edição direta na mesma visualização\nInterface responsiva (tabela no desktop, cards no mobile) e sistema de autenticação por PIN",
-      "Resultado": "Aplicação em uso ativo e evolução contínua (mais de 15 versões incrementais entregues), substituindo controle manual por uma ferramenta única de acesso multiplataforma, com correções de performance e usabilidade guiadas por feedback de uso real (ex.: eliminação de bugs de renderização mobile, consolidação de telas redundantes e simplificação de fluxos de lançamento).",
-      "Badge": "<i class=\"fas fa-lock\"></i> Uso Pessoal / Produtividade",
-      "Link": "https://drive.google.com/file/d/10Xuorm3jcWk8bd9x2w-pYg7bkTAESowS/view?usp=drive_link",
-      "LinkLabel": "Visualizar Print do Programa →"
-    },
-    {
-      "ID": "atendimento-adm-gru",
-      "Titulo": "Sistema de divulgação de escalas de atendimento",
-      "Tech": "<i class='fas fa-file-code'></i> Google Apps Script\n<i class='fas fa-globe'></i> WebApp (HTML/CSS/JS)\n<i class='fab fa-github'></i> GitHub Pages + API\n<i class='fas fa-user-shield'></i> Controle de Acesso por Papel\n<i class='fas fa-clock'></i> Automação (Triggers)\n<i class='fas fa-shield-alt'></i> Privacy by Design",
-      "Data": "jul./2026",
-      "Cor": "",
-      "Desafio": "O Departamento Administrativo de uma universidade publicava horários e forma de atendimento de 13 setores em um painel de Data Studio alimentado manualmente, sem vínculo com a situação real de férias/afastamentos dos servidores — exigindo atualização manual constante e sem garantia de que o público estivesse vendo dados confiáveis sobre quem realmente estaria presencial em cada dia.",
-      "Solucao": "Arquitetei e desenvolvi, do zero, uma solução full-stack sobre Google Apps Script e GitHub Pages: um Web App com controle de acesso por papel (admin/servidor, com suporte a acúmulo de papéis), CRUD de setores e servidores com vínculos N:N, cadastro self-service de horários e afastamentos, e um pipeline de publicação que pré-calcula no servidor — sem nunca expor o calendário de ausências publicamente — uma programação de atendimento presencial para duas semanas, sincronizada automaticamente com um site público responsivo (HTML/CSS/JS) hospedado no GitHub Pages, com QR code de acesso e atualização diária automatizada via gatilho de tempo.",
-      "Resultado": "Desenvolvido em julho de 2026, possibilitou a substituição integral de um painel estático e manual por um sistema vivo, auditável (com painel de conferência de preenchimento) e seguro por design (dados sensíveis de RH nunca trafegam ao público), reduzindo a carga operacional de atualização manual e aumentando a confiabilidade da informação exposta a docentes, discentes e comunidade externa sobre a disponibilidade real de atendimento presencial por setor.",
-      "Badge": "",
-      "Link": "https://mauriciooura-a11yke.github.io/adm-gru/",
-      "LinkLabel": "Visualizar o site →"
     }
   ]
 }
