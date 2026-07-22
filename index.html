@@ -278,7 +278,7 @@
         .mini-card {
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            border-left: 4px solid var(--accent-color);
+            border-left: 4px solid var(--card-accent, var(--accent-color));
             padding: 12px;
             border-radius: 6px;
             transition: all 0.3s var(--transition-smooth);
@@ -287,14 +287,14 @@
         }
 
         .mini-card:hover {
-            background: var(--accent-color);
-            border-color: #60a5fa;
+            background: var(--card-accent, var(--accent-color));
+            border-color: var(--card-accent, var(--accent-color));
             transform: translateY(-3px);
             box-shadow: 0 0 15px var(--accent-glow);
         }
 
         .mini-card:hover strong { color: #fff !important; }
-        .mini-card:hover small { color: rgba(255, 255, 255, 0.8) !important; }
+        .mini-card:hover small { color: rgba(255, 255, 255, 0.85) !important; }
 
         /* CARDS DE PROJETOS INTERATIVOS */
         .card {
@@ -302,7 +302,7 @@
             border-radius: 8px;
             padding: 1.5rem;
             margin-bottom: 2rem;
-            border-left: 5px solid var(--accent-color);
+            border-left: 5px solid var(--card-accent, var(--accent-color));
             border-top: 1px solid rgba(255, 255, 255, 0.03);
             border-right: 1px solid rgba(255, 255, 255, 0.03);
             border-bottom: 1px solid rgba(255, 255, 255, 0.03);
@@ -313,7 +313,7 @@
         .card:hover {
             transform: translateY(-4px);
             background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(59, 130, 246, 0.4);
+            border-color: var(--card-accent, var(--accent-color));
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 0 15px -2px var(--accent-glow);
         }
 
@@ -649,6 +649,14 @@
         return parseInt(m[2], 10) * 12 + MESES_PT[m[1]];
     }
 
+    // Paleta de cores de destaque, uma por projeto, aplicada em rotação.
+    // Pode ser sobrescrita por projeto com a coluna opcional "Cor" (ex: #f97316) na aba Portfolio.
+    const PALETA_CORES = ['#60a5fa', '#c084fc', '#4ade80', '#fbbf24', '#f472b6', '#22d3ee', '#fb923c'];
+
+    function corValida(str) {
+        return typeof str === 'string' && /^#[0-9a-fA-F]{6}$/.test(str.trim());
+    }
+
     function renderPortfolio(lista) {
         // Ordena do mais recente para o mais antigo. Itens sem data reconhecível ("Em evolução", etc.) ficam no topo.
         const ordenada = [...lista].sort((a, b) => {
@@ -660,8 +668,10 @@
             return db - da;
         });
 
-        document.getElementById("cv-portfolio").innerHTML = ordenada.map(c => `
-            <div class="card" id="${c.ID || ''}" data-tech="${(c.Tech || '').replace(/"/g, '&quot;')}" data-date="${(c.Data || '').replace(/"/g, '&quot;')}">
+        document.getElementById("cv-portfolio").innerHTML = ordenada.map((c, i) => {
+            const cor = corValida(c.Cor) ? c.Cor.trim() : PALETA_CORES[i % PALETA_CORES.length];
+            return `
+            <div class="card" id="${c.ID || ''}" data-tech="${(c.Tech || '').replace(/"/g, '&quot;')}" data-date="${(c.Data || '').replace(/"/g, '&quot;')}" data-accent="${cor}" style="--card-accent: ${cor};">
                 <h3>${c.Titulo || ''}</h3>
                 <div class="card-columns">
                     <div class="card-col desafio">
@@ -682,7 +692,8 @@
                     ${c.Link ? `<a href="${c.Link}" class="btn-link" target="_blank">${c.LinkLabel || 'Acessar →'}</a>` : ''}
                 </div>
             </div>
-        `).join("");
+        `;
+        }).join("");
     }
 
     // ENGENHARIA DE AUTOMAÇÃO DO PORTFÓLIO:
@@ -700,10 +711,11 @@
             }
             const tech = card.getAttribute("data-tech") || "<i class='fas fa-laptop-code'></i> Solução Técnica";
             const date = card.getAttribute("data-date") || "";
+            const accent = card.getAttribute("data-accent") || "";
 
             const summaryItemHTML = `
                 <a href="#${id}" class="mini-card-link">
-                    <div class="mini-card">
+                    <div class="mini-card" style="${accent ? '--card-accent: ' + accent + ';' : ''}">
                         <strong style="color: #fff; font-size: 0.9rem; display: block; margin-bottom: 4px; transition: color 0.3s;">${title}</strong>
                         <small style="color: var(--text-muted); font-size: 0.75rem; transition: color 0.3s;">${tech}</small>
                     </div>
