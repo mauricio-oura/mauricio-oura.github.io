@@ -4,7 +4,7 @@ Este repositório contém meu currículo profissional, focado em **Mapeamento de
 
 ## 🌐 Versão Visual
 Para visualizar meu currículo em formato de página web, acesse:
-👉 [https://mauriciooura-a11yke.github.io/mauriciooura-a11yke/](https://mauriciooura-a11yke.github.io/mauriciooura-a11yke/)
+👉 https://mauricio-oura.github.io/
 Lá poderá visualizar alguns de meus projetos.
 
 ## 🚀 Sobre Mim
