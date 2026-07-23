@@ -66,7 +66,7 @@
       "Label": "Anos automatizando processos públicos"
     },
     {
-      "Valor": "12",
+      "Valor": "13",
       "Label": "Soluções em produção no portfólio"
     },
     {
@@ -170,6 +170,19 @@
       "Resultado": "Aplicação em uso ativo e evolução contínua (mais de 15 versões incrementais entregues), substituindo controle manual por uma ferramenta única de acesso multiplataforma, com correções de performance e usabilidade guiadas por feedback de uso real (ex.: eliminação de bugs de renderização mobile, consolidação de telas redundantes e simplificação de fluxos de lançamento).",
       "Badge": "<i class=\"fas fa-lock\"></i> Uso Pessoal / Produtividade",
       "Link": "https://drive.google.com/file/d/1qm5FNXCfJM8zzRrqGD6DIDLu17u-KJYR/view?usp=drive_link; https://drive.google.com/file/d/12KyMTLFyLWQdNUjGb4Rrq_0v1MzahbgW/view?usp=drive_link; https://drive.google.com/file/d/1TP-sZ1V7KjfZVlEEjJQa9Dt4tvEsROK_/view?usp=drive_link; https://drive.google.com/file/d/1gzYyzO0Qs57hLQYzh3cizNLTNBrk7wJ-/view?usp=drive_link; https://drive.google.com/file/d/1t5eNgAZ4rrYcN07EoKouzdHCi-179RXS/view?usp=drive_link; https://drive.google.com/file/d/1EU_IgQa74YtwqVoiNuPqEdcy0QCzMhLj/view?usp=drive_link; https://drive.google.com/file/d/1V2rCpNEDOVHAir-LI666W7c65EUs9hxV/view?usp=drive_link; https://drive.google.com/file/d/1YLeWxfT3YFumY5jNVKM8kGJ77x3-Z8-a/view?usp=drive_link",
+      "LinkLabel": "Visualizar Print do Programa →"
+    },
+    {
+      "ID": "gerador-atas-cepg",
+      "Titulo": "Gerador de Atas de Reunião de Conselho",
+      "Tech": "<i class='fas fa-wallet'></i> WebApp + Apps Script",
+      "Data": "maio/2026",
+      "Cor": "",
+      "Desafio": "Automatizar a geração de atas de reunião de programa de pós-graduação, eliminando retrabalho manual, reduzindo erros de formatação e tornando o sistema reutilizável para outros programas de pós-graduação sem necessidade de alterações no código.",
+      "Solucao": "Desenvolvimento de uma GAS Web App integrada ao Google Sheets, com geração dinâmica de HTML formatado para o SEI. O sistema lê configurações diretamente da planilha vinculada — nome do programa, membros, presidente, secretário e horários padrão — eliminando valores hardcoded. Inclui controle de acesso por e-mail, salvamento em JSON no Google Drive e recuperação de atas anteriores para edição.",
+      "Resultado": "Sistema pronto para ser replicado para qualquer PPG com zero alterações no código: basta configurar a planilha. A geração de atas passou de um processo manual para um fluxo guiado, com preview em tempo real e exportação direta do HTML pronto para colar no Sistema SEI.",
+      "Badge": "",
+      "Link": "https://drive.google.com/file/d/1v4e7tt3L-fdGKMkfx4fl5WipqFbcxysf/view?usp=drive_link; https://drive.google.com/file/d/1pjefbL6zR4SzGlz0tNCiEbRxD7Hqn2oA/view?usp=drive_link; https://drive.google.com/file/d/1Wg1tYWzHfocB6a88olNLDRIm21rwGKYj/view?usp=drive_link",
       "LinkLabel": "Visualizar Print do Programa →"
     },
     {
