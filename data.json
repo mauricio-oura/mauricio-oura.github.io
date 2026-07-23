@@ -251,6 +251,19 @@
       "LinkLabel": "Acessar print do WebApp →"
     },
     {
+      "ID": "menu-ppge",
+      "Titulo": "Menu de Pendências",
+      "Tech": "<i class='fas fa-file-code'></i> Google Apps Script",
+      "Data": "jan./2025",
+      "Cor": "",
+      "Desafio": "Gerenciar simultaneamente um grande volume de pendências de diferentes naturezas, cada uma com prazos extensos e dependente da atuação de múltiplas áreas e do cumprimento de diversos procedimentos administrativos. Esse cenário dificultava o acompanhamento das demandas, aumentava o risco de esquecimentos e comprometia a priorização das atividades mais críticas.",
+      "Solucao": "Desenvolvi uma ferramenta de gerenciamento de pendências utilizando Google Sheets e Google Apps Script, inspirada no conceito de quadros Kanban do Trello. A solução automatiza a criação de cartões (cards) com check-lists individuais, armazenados e organizados no Google Drive, gerando automaticamente os respectivos links de acesso. Cada célula da planilha representa um card, permitindo o acompanhamento centralizado e intuitivo de todas as atividades.",
+      "Resultado": "A ferramenta passou a consolidar, em uma única interface, todas as pendências do setor, com acesso direto aos check-lists correspondentes armazenados no Google Drive. A solução reduziu significativamente o risco de esquecimento de atividades, aprimorou o controle das demandas, facilitou a definição de prioridades e proporcionou maior organização e eficiência na execução das tarefas mais críticas.",
+      "Badge": "",
+      "Link": "https://drive.google.com/file/d/11AmN9bxYsBS0zbzGZV-1E8x4AlbL_tJZ/view?usp=drive_link;  https://drive.google.com/file/d/1TPWdxSEsUosc4_-JOFqEFIHINKqNYyPy/view?usp=drive_link",
+      "LinkLabel": "Acessar print da planilha"
+    },
+    {
       "ID": "execucao-orcamentaria",
       "Titulo": "Painel de Execução Orçamentária da Unifesp",
       "Tech": "<i class='fas fa-chart-pie'></i> ETL + Data Studio",
