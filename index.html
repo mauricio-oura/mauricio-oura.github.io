@@ -1041,8 +1041,9 @@
             const summaryItemHTML = `
                 <a href="#${id}" class="mini-card-link">
                     <div class="mini-card" style="${accent ? '--card-accent: ' + accent + ';' : ''}">
-                        <strong style="color: #fff; font-size: 0.9rem; display: block; margin-bottom: 4px; transition: color 0.3s;">${title}</strong>
-                        <small style="color: var(--text-muted); font-size: 0.75rem; transition: color 0.3s;">${tech}</small>
+                        <strong style="color: #fff; font-size: 1.02rem; line-height: 1.3; display: block; margin-bottom: 6px; transition: color 0.3s;">${title}</strong>
+                        <small style="color: var(--text-muted); font-size: 0.82rem; display: block; transition: color 0.3s;">${tech}</small>
+                        ${date ? `<small style="color: var(--text-muted); font-size: 0.74rem; display: flex; align-items: center; gap: 5px; margin-top: 7px; opacity: 0.85; transition: color 0.3s;"><i class="fas fa-calendar-alt"></i> ${date}</small>` : ''}
                     </div>
                 </a>
             `;
