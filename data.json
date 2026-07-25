@@ -286,7 +286,7 @@
     },
     {
       "ID": "menu-ppge",
-      "Titulo": "Menu de Pendências",
+      "Titulo": "\"Trello\" em Google planilha",
       "Tech": "<i class='fas fa-file-code'></i> Google Apps Script",
       "Data": "jan./2025",
       "Cor": "",
