@@ -829,7 +829,7 @@
         /* CONFIGURAÇÃO DE IMPRESSÃO */
         @media print {
             body { background: white !important; color: #24292e !important; }
-            .progress-bar, .grid-sumario, .topo-link-container { display: none !important; }
+            .progress-bar, .grid-sumario, .link-topo { display: none !important; }
             .cv-container { margin: 0; padding: 0; box-shadow: none; max-width: 100%; animation: none !important; background: transparent !important; border: none !important; }
             header h1 { color: #2c3e50 !important; text-shadow: none !important; }
             header p.subtitle { color: #1e3a8a !important; text-shadow: none !important; }
@@ -1310,7 +1310,7 @@
                     <h3 style="margin: 0; font-size: 1.15rem; color: #fff;">${card.querySelector("h3").innerHTML}</h3>
                     <div style="display: flex; align-items: center; gap: 10px; flex-shrink: 0;">
                         ${date ? `<span class="card-date">${date}</span>` : ''}
-                        <a href="#portfolio-section" class="btn-link" style="font-size: 0.8rem; font-weight: normal; color: var(--text-muted) !important; white-space: nowrap;"><i class="fas fa-arrow-up"></i> topo</a>
+                        <a href="#portfolio-section" class="btn-link link-topo" style="font-size: 0.8rem; font-weight: normal; color: var(--text-muted) !important; white-space: nowrap;"><i class="fas fa-arrow-up"></i> topo</a>
                     </div>
                 </div>
             `;
