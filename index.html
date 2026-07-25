@@ -882,7 +882,7 @@
             renderFormacao(data.formacao || []);
             renderBadges("cv-hardskills", data.hardSkills || []);
             renderBadges("cv-softskills", data.softSkills || []);
-            renderBadges("cv-idiomas", data.idiomas || []);
+            renderIdiomas(data.idiomas || []);
             renderPremios(data.premios || []);
             renderExperiencia(data.experiencia || []);
             renderPortfolio(data.portfolio || []);
@@ -958,6 +958,36 @@
         document.getElementById(containerId).innerHTML = lista
             .filter(item => String(item || '').trim() !== '')
             .map(item => `<span class="badge">${item}</span>`)
+            .join("");
+    }
+
+    // Detecta o idioma pelo texto (ex: "Inglês (avançado)") e retorna a bandeira correspondente.
+    function bandeiraIdioma(texto) {
+        const t = (texto || '').toLowerCase();
+        const mapa = [
+            [['português', 'portugues'], '🇧🇷'],
+            [['inglês', 'ingles', 'english'], '🇺🇸'],
+            [['espanhol', 'espanol', 'spanish', 'castelhano'], '🇪🇸'],
+            [['japonês', 'japones', 'japanese'], '🇯🇵'],
+            [['francês', 'frances', 'french'], '🇫🇷'],
+            [['alemão', 'alemao', 'german'], '🇩🇪'],
+            [['italiano', 'italian'], '🇮🇹'],
+            [['mandarim', 'chinês', 'chines', 'chinese'], '🇨🇳'],
+            [['coreano', 'korean'], '🇰🇷'],
+            [['russo', 'russian'], '🇷🇺'],
+            [['árabe', 'arabe', 'arabic'], '🇸🇦'],
+            [['holandês', 'holandes', 'dutch'], '🇳🇱']
+        ];
+        for (const [chaves, bandeira] of mapa) {
+            if (chaves.some(k => t.includes(k))) return bandeira;
+        }
+        return '🌐';
+    }
+
+    function renderIdiomas(lista) {
+        document.getElementById("cv-idiomas").innerHTML = lista
+            .filter(item => String(item || '').trim() !== '')
+            .map(item => `<span class="badge">${bandeiraIdioma(item)} ${item}</span>`)
             .join("");
     }
 
