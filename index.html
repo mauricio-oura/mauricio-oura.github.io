@@ -338,6 +338,94 @@
             .formacao-ano { border: 1px solid #ccc !important; color: #555 !important; }
         }
 
+        /* TIMELINE DE PRÊMIOS E DESTAQUES (mesmo padrão visual da Formação) */
+        .premios-timeline {
+            padding-left: 2px;
+        }
+
+        .premio-item {
+            position: relative;
+            display: flex;
+            gap: 16px;
+            padding-bottom: 22px;
+        }
+
+        .premio-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .premio-item:not(:last-child)::before {
+            content: '';
+            position: absolute;
+            left: 17px;
+            top: 36px;
+            bottom: -22px;
+            width: 1px;
+            background: rgba(96, 165, 250, 0.22);
+        }
+
+        .premio-dot {
+            flex-shrink: 0;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(96, 165, 250, 0.1);
+            border: 1px solid rgba(96, 165, 250, 0.35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #60a5fa;
+            font-size: 0.85rem;
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s var(--transition-smooth);
+        }
+
+        .premio-item:hover .premio-dot {
+            background: var(--accent-color);
+            color: #fff;
+            box-shadow: 0 0 12px var(--accent-glow);
+        }
+
+        .premio-conteudo {
+            flex: 1;
+            padding-top: 4px;
+            min-width: 0;
+        }
+
+        .premio-topo {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 6px 14px;
+        }
+
+        .premio-titulo {
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .premio-link {
+            font-size: 0.8rem !important;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .premio-descricao {
+            display: block;
+            margin-top: 4px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        @media print {
+            .premio-dot { border: 1px solid #3b82f6 !important; background: transparent !important; color: #1e3a8a !important; }
+            .premio-item:not(:last-child)::before { background: #ccc !important; }
+            .premio-titulo { color: #1e293b !important; }
+        }
+
         /* BADGES */
         .badge-grid { 
             display: flex; 
@@ -820,7 +908,7 @@
 
     <section>
         <h2><i class="fas fa-award"></i> Prêmios e Destaques</h2>
-        <div id="cv-premios"></div>
+        <div class="premios-timeline" id="cv-premios"></div>
     </section>
 
     <section>
@@ -991,14 +1079,27 @@
             .join("");
     }
 
+    // Escolhe um ícone Font Awesome de acordo com o tipo de conquista identificado no título.
+    function iconePremio(titulo) {
+        const t = (titulo || '').toLowerCase();
+        if (t.includes('homenagem') || t.includes('destaque') || t.includes('reconhecimento')) return 'fa-medal';
+        if (t.includes('e-book') || t.includes('ebook') || t.includes('livro') || t.includes('obra')) return 'fa-book';
+        if (t.includes('artigo') || t.includes('publica')) return 'fa-newspaper';
+        if (t.includes('prêmio') || t.includes('premio') || t.includes('award')) return 'fa-trophy';
+        return 'fa-star';
+    }
+
     function renderPremios(lista) {
         document.getElementById("cv-premios").innerHTML = lista.map(p => `
-            <div class="item" style="display: flex; justify-content: space-between; align-items: baseline; gap: 15px; margin-bottom: 0.5rem;">
-                <div style="flex: 1;">
-                    <span class="job-title" style="margin-bottom: 0; font-size: 1rem;">${p.Titulo || ''}</span>
-                    <small style="color: var(--text-muted); display: block;">${p.Descricao || ''}</small>
+            <div class="premio-item">
+                <div class="premio-dot"><i class="fas ${iconePremio(p.Titulo)}"></i></div>
+                <div class="premio-conteudo">
+                    <div class="premio-topo">
+                        <span class="premio-titulo">${p.Titulo || ''}</span>
+                        ${p.Link ? `<a href="${p.Link}" class="btn-link premio-link" target="_blank">${p.LinkLabel || 'Acessar →'}</a>` : ''}
+                    </div>
+                    <span class="premio-descricao">${p.Descricao || ''}</span>
                 </div>
-                ${p.Link ? `<a href="${p.Link}" class="btn-link" target="_blank" style="white-space: nowrap; font-size: 0.85rem;">${p.LinkLabel || 'Acessar →'}</a>` : ''}
             </div>
         `).join("");
     }
