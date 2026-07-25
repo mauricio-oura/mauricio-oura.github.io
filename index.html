@@ -1285,7 +1285,8 @@
 
         cards.forEach(card => {
             const id = card.getAttribute("id");
-            let title = card.querySelector("h3").innerText;
+            const tituloCompleto = card.querySelector("h3").innerText;
+            let title = tituloCompleto;
             if (title.length > 45) {
                 title = title.substring(0, 42) + "...";
             }
@@ -1294,7 +1295,7 @@
             const accent = card.getAttribute("data-accent") || "";
 
             const summaryItemHTML = `
-                <a href="#${id}" class="mini-card-link">
+                <a href="#${id}" class="mini-card-link" title="${tituloCompleto.replace(/"/g, '&quot;')}">
                     <div class="mini-card" style="${accent ? '--card-accent: ' + accent + ';' : ''}">
                         <strong style="color: #fff; font-size: 1.02rem; line-height: 1.3; display: block; margin-bottom: 6px; transition: color 0.3s;">${title}</strong>
                         <small style="color: var(--text-muted); font-size: 0.82rem; display: block; transition: color 0.3s;">${tech}</small>
