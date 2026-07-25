@@ -14,22 +14,22 @@
     {
       "Titulo": "Doutorado em Administração",
       "Ano": "2014",
-      "Instituicao": "Uninove, SP"
+      "Instituicao": "Universidade Nove de Julho, SP"
     },
     {
       "Titulo": "Mestrado em Administração",
       "Ano": "2008",
-      "Instituicao": "Uninove, SP"
+      "Instituicao": "Universidade Nove de Julho, SP"
     },
     {
       "Titulo": "Bacharelado em Administração (com Habilitação em Comércio Exterior)",
       "Ano": "2004",
-      "Instituicao": "Torricelli, SP"
+      "Instituicao": "Faculdades Integradas Torricelli, SP"
     },
     {
       "Titulo": "Certificação em Liderança",
       "Ano": "2015",
-      "Instituicao": "FGV/SP"
+      "Instituicao": "Fundação Getúlio Vargas, SP"
     }
   ],
   "hardSkills": [
@@ -79,7 +79,7 @@
     },
     {
       "Valor": "3",
-      "Label": "Prêmios"
+      "Label": "Prêmios / Reconhecimentos"
     }
   ],
   "premios": [
@@ -157,7 +157,7 @@
     {
       "ID": "atendimento-adm-gru",
       "Titulo": "Sistema de divulgação de escalas de atendimento",
-      "Tech": "<i class='fas fa-file-code'></i> Google Apps Script\n<i class='fas fa-globe'></i> WebApp (HTML/CSS/JS)\n<i class='fab fa-github'></i> GitHub Pages + API\n<i class='fas fa-user-shield'></i> Controle de Acesso por Papel\n<i class='fas fa-clock'></i> Automação (Triggers)\n<i class='fas fa-shield-alt'></i> Privacy by Design",
+      "Tech": "<i class='fas fa-file-code'></i> Google Apps Script\n<i class='fab fa-github'></i> GitHub Pages + API\n<i class='fas fa-user-shield'></i> Controle de Acesso por Papel",
       "Data": "jul./2026",
       "Cor": "",
       "Desafio": "O Departamento Administrativo de uma universidade publicava horários e forma de atendimento de 13 setores em um painel de Data Studio alimentado manualmente, sem vínculo com a situação real de férias/afastamentos dos servidores — exigindo atualização manual constante e sem garantia de que o público estivesse vendo dados confiáveis sobre quem realmente estaria presencial em cada dia.",
