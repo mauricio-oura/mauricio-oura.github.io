@@ -76,6 +76,10 @@
     {
       "Valor": "100%",
       "Label": "Soluções low-cost, sem licenças pagas"
+    },
+    {
+      "Valor": "3",
+      "Label": "Prêmios e Homenagens"
     }
   ],
   "premios": [
