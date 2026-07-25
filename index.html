@@ -179,8 +179,10 @@
 
         @media print {
             .posicionamento { background: transparent !important; border: 1px solid #ccc !important; color: #24292e !important; }
-            .stat-box { border: 1px solid #ccc !important; background: transparent !important; }
-            .stat-box .stat-valor { color: #2c3e50 !important; text-shadow: none !important; }
+            .stats-bar { grid-template-columns: repeat(auto-fit, minmax(70px, 1fr)) !important; gap: 6px !important; }
+            .stat-box { border: 1px solid #ccc !important; background: transparent !important; padding: 8px 4px !important; }
+            .stat-box .stat-valor { color: #2c3e50 !important; text-shadow: none !important; font-size: 1.1rem !important; }
+            .stat-box .stat-label { font-size: 0.58rem !important; }
         }
 
         /* SEÇÕES */
