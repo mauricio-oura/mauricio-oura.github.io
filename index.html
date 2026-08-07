@@ -1165,7 +1165,7 @@
 
         let thumb = '';
         if (thumbs.length > 0) {
-            const galeriaFull = thumbs.map(t => `https://drive.google.com/uc?export=view&id=${t.driveId}`);
+            const galeriaFull = thumbs.map(t => `https://drive.google.com/thumbnail?id=${t.driveId}&sz=w1600`);
             const galeriaJson = JSON.stringify(galeriaFull).replace(/"/g, '&quot;');
             const linksOriginaisJson = JSON.stringify(thumbs.map(t => t.url)).replace(/"/g, '&quot;');
             const legenda = (c.Titulo || '').replace(/"/g, '&quot;');
