@@ -178,7 +178,7 @@
       "Resultado": "Aplicação em uso ativo e evolução contínua (mais de 15 versões incrementais entregues), substituindo controle manual por uma ferramenta única de acesso multiplataforma, com correções de performance e usabilidade guiadas por feedback de uso real (ex.: eliminação de bugs de renderização mobile, consolidação de telas redundantes e simplificação de fluxos de lançamento).",
       "Badge": "<i class=\"fas fa-lock\"></i> Uso Pessoal / Produtividade",
       "Link": "https://drive.google.com/file/d/1S1ampWG9VWzFmGcBe74VHhXa8NqOcxud/view?usp=drive_link; https://drive.google.com/file/d/1qm5FNXCfJM8zzRrqGD6DIDLu17u-KJYR/view?usp=drive_link; https://drive.google.com/file/d/12KyMTLFyLWQdNUjGb4Rrq_0v1MzahbgW/view?usp=drive_link; https://drive.google.com/file/d/1TP-sZ1V7KjfZVlEEjJQa9Dt4tvEsROK_/view?usp=drive_link; https://drive.google.com/file/d/1gzYyzO0Qs57hLQYzh3cizNLTNBrk7wJ-/view?usp=drive_link; https://drive.google.com/file/d/1t5eNgAZ4rrYcN07EoKouzdHCi-179RXS/view?usp=drive_link; https://drive.google.com/file/d/1EU_IgQa74YtwqVoiNuPqEdcy0QCzMhLj/view?usp=drive_link; https://drive.google.com/file/d/1V2rCpNEDOVHAir-LI666W7c65EUs9hxV/view?usp=drive_link; https://drive.google.com/file/d/1YLeWxfT3YFumY5jNVKM8kGJ77x3-Z8-a/view?usp=drive_link",
-      "LinkLabel": "Visualizar Print do Programa →"
+      "LinkLabel": ""
     },
     {
       "ID": "pipeline-proleei",
@@ -191,7 +191,7 @@
       "Resultado": "Geração de centenas de documentos DOCX e XLSX empacotados em ZIP com um único clique, organizados automaticamente em subpastas por município. Eliminação do retrabalho de configuração a cada ciclo — o app reconhece o arquivo, carrega o template correto e aplica as configurações adequadas para cada polo de formação de forma automática. A tolerância a variações nos rótulos das colunas garante continuidade mesmo quando a base é atualizada, sem necessidade de recriar configurações. Rastreabilidade completa do arquivo e aba em uso em todas as etapas, com alertas visuais em caso de inconsistência entre a configuração salva e a base carregada. Interface acessível a usuários sem conhecimento técnico, com editor de JSON inline e cadastro de regras de autoconfig diretamente no app.",
       "Badge": "<i class=\"fas fa-users\"></i> Gestão Educacional / Automação de Documentos",
       "Link": "https://drive.google.com/file/d/1ikvghPVAN7V74yWTFogddtFEcDEaEpR3/view?usp=drive_link; https://drive.google.com/file/d/1YlSnmu86XwXfTEfYcDhF2nH_Kwru1Kwc/view?usp=drive_link; https://drive.google.com/file/d/1xNbn1etZQvuSDT_yZyL3apcxAQyldVr6/view?usp=drive_link; https://drive.google.com/file/d/1pa8rbsHIm2EW7BSsI363gmg4-HA_RPL2/view?usp=drive_link",
-      "LinkLabel": "Visualizar Print do Programa →"
+      "LinkLabel": ""
     },
     {
       "ID": "gerador-atas-cepg",
@@ -204,7 +204,7 @@
       "Resultado": "Sistema pronto para ser replicado para qualquer PPG com zero alterações no código: basta configurar a planilha. A geração de atas passou de um processo manual para um fluxo guiado, com preview em tempo real e exportação direta do HTML pronto para colar no Sistema SEI.",
       "Badge": "",
       "Link": "https://drive.google.com/file/d/1v4e7tt3L-fdGKMkfx4fl5WipqFbcxysf/view?usp=drive_link; https://drive.google.com/file/d/1pjefbL6zR4SzGlz0tNCiEbRxD7Hqn2oA/view?usp=drive_link; https://drive.google.com/file/d/1Wg1tYWzHfocB6a88olNLDRIm21rwGKYj/view?usp=drive_link",
-      "LinkLabel": "Visualizar Print do Programa →"
+      "LinkLabel": ""
     },
     {
       "ID": "agenda-ppge",
@@ -217,7 +217,7 @@
       "Resultado": "Sistema em produção utilizado pela equipe da secretaria acadêmica, com acesso autenticado, atualização instantânea dos dados ao abrir o app, e interface responsiva que exibe dezenas de eventos acadêmicos com visual diferenciado por categoria, status de vigência e controle granular de visibilidade — tudo construído com ferramentas gratuitas do ecossistema Google e GitHub.",
       "Badge": "",
       "Link": "https://drive.google.com/file/d/1uLEPDU4QUdadAxfWkFsPmBJuaISv4Ec-/view?usp=drive_link; https://drive.google.com/file/d/1mlEwmXvGm-lMeMGVsHPgYSJX9RXoEmbP/view?usp=drive_link; https://drive.google.com/file/d/16a3euAmlTyj36wL85-B2T-JPKQcO6XSp/view?usp=drive_link",
-      "LinkLabel": "Visualizar Print do Programa →"
+      "LinkLabel": ""
     },
     {
       "ID": "agenda-bancas",
@@ -269,7 +269,7 @@
       "Resultado": "Desenvolvida em novembro de 2025, a ferramenta automatiza o processo de extração e migração de arquivos. Após a execução, os documentos são baixados diretamente da página web e armazenados em uma pasta no Google Drive. Simultaneamente, o sistema gera uma planilha contendo a listagem dos textos identificados e seus respectivos links para os arquivos armazenados no Drive. A solução reduziu significativamente o trabalho manual de migração, proporcionando maior agilidade, rastreabilidade e organização no processo de atualização do portal institucional.",
       "Badge": "",
       "Link": "https://drive.google.com/file/d/1Y_qhEkR0x-hJ9xou66jKlxapK3pgI_7Q/view?usp=drive_link; https://drive.google.com/file/d/1PYWG9o_VVeBs9_8OAEKMIy4QVvLtUWMA/view?usp=drive_link; https://drive.google.com/file/d/1woPgyQPxXW8PL3d9LjVnKy8WhQIcotQ5/view?usp=drive_link",
-      "LinkLabel": "Acessar print do App →"
+      "LinkLabel": ""
     },
     {
       "ID": "mailing-list",
@@ -282,7 +282,7 @@
       "Resultado": "Lançado em setembro de 2025, o Web App apresenta um visual \"clean\" e permite a geração de listas personalizadas de e-mails, em poucos segundos, de forma automatizada. Além de manter os dados permanentemente atualizados, a ferramenta oferece filtros dinâmicos de alto desempenho, possibilitando segmentações por curso, situação acadêmica, nível e ano de ingresso. A solução reduziu significativamente o tempo necessário para preparação de comunicações institucionais, ampliando a precisão das listas e facilitando a gestão da comunicação com diferentes públicos acadêmicos. A ferramenta dispensa a existência de várias planilhas em cada PPG.",
       "Badge": "<i class=\"fas fa-microchip\"></i> Solução Interna de Alta Eficiência",
       "Link": "https://drive.google.com/file/d/14mhuhaBXLjFZhnyTPLgcWP739v9_o5EA/view?usp=drive_link; https://drive.google.com/file/d/1zn4QGiIPsJENlwsvBEpN_rto98elfdQF/view?usp=drive_link",
-      "LinkLabel": "Acessar print do WebApp →"
+      "LinkLabel": ""
     },
     {
       "ID": "menu-ppge",
@@ -295,7 +295,7 @@
       "Resultado": "A ferramenta passou a consolidar, em uma única interface, todas as pendências do setor, com acesso direto aos check-lists correspondentes armazenados no Google Drive. A solução reduziu significativamente o risco de esquecimento de atividades, aprimorou o controle das demandas, facilitou a definição de prioridades e proporcionou maior organização e eficiência na execução das tarefas mais críticas.",
       "Badge": "",
       "Link": "https://drive.google.com/file/d/11AmN9bxYsBS0zbzGZV-1E8x4AlbL_tJZ/view?usp=drive_link; https://drive.google.com/file/d/1TPWdxSEsUosc4_-JOFqEFIHINKqNYyPy/view?usp=drive_link",
-      "LinkLabel": "Visualizar Print →"
+      "LinkLabel": ""
     },
     {
       "ID": "execucao-orcamentaria",
@@ -321,7 +321,7 @@
       "Resultado": "Ativo desde dezembro de 2024, o projeto vem sendo continuamente aprimorado. Atualmente, o painel disponibiliza indicadores consolidados de cada PPG, filtros interativos para emissão de relatórios personalizados, estatísticas relacionadas aos prazos de defesa, além de exibição de listagem de estudantes com prazos vencidos ou próximos do vencimento. As informações referentes a novos ingressantes, alterações de situação acadêmica, datas de defesa e homologação são atualizadas diariamente. Já os dados relativos a prazos de vencimento são atualizados quinzenalmente, em razão da menor necessidade de atualização contínua.",
       "Badge": "",
       "Link": "https://drive.google.com/file/d/1qhr0j-36xVdG99Q_nPWl3LakHWDXFOj_/view?usp=drive_link; https://drive.google.com/file/d/1g-saHVX00Xj7dxWSi7gymk3E4chSx_0V/view?usp=drive_link; https://drive.google.com/file/d/1MDryXyr657LxIg_icsFmyUZ_XKJegETX/view?usp=drive_link",
-      "LinkLabel": "Visualizar Print de parte do Painel →"
+      "LinkLabel": ""
     }
   ]
 }
