@@ -313,15 +313,15 @@
     {
       "ID": "dados-estudantes",
       "Titulo": "Painel de Dados de Estudantes e Pós-Doutorandos de Programas de Pós-Graduação",
-      "Tech": "<i class='fas fa-spider'></i> Scraping + Python\n<i class='fas fa-file-code'></i> Google Apps Script",
+      "Tech": "<i class='fas fa-spider'></i> Scraping + Python",
       "Data": "dez./2024",
       "Cor": "",
       "Desafio": "Automatizar a consolidação e divulgação de informações estratégicas para secretarias, coordenações de Programas de Pós-Graduação e orientadores.",
       "Solucao": "Desenvolvimento de uma solução baseada em web scraping (raspagem de dados), utilizando Selenium e Python. Com poucos cliques, os dados são extraídos automaticamente e integrados, em tempo real, ao Google Planilhas e ao Google Data Studio, possibilitando a construção de painéis dinâmicos e interativos.",
-      "Resultado": "Ativo desde dezembro de 2024, o projeto vem sendo continuamente aprimorado. Atualmente, o painel disponibiliza indicadores consolidados de cada PPG, filtros interativos para emissão de relatórios personalizados, estatísticas relacionadas aos prazos de defesa, além de exibição de listagem de estudantes com prazos vencidos ou próximos do vencimento. As informações referentes a novos ingressantes, alterações de situação acadêmica, datas de defesa e homologação são atualizadas diariamente. Já os dados relativos a prazos de vencimento são atualizados quinzenalmente, em razão da menor necessidade de atualização contínua. O painel também apresenta abas restritas a administradores com 1) tela de consulta de prontuário de cada aluno com um super-filtro que encontra partes de nomes, nomes com e sem acento, nomes invertidos;2) Tela de abertura de chamado interno para raspagem de dados prioritária;3) Aba de pendências de dados e inconsistências.",
+      "Resultado": "Ativo desde dezembro de 2024, o projeto vem sendo continuamente aprimorado. Atualmente, o painel disponibiliza indicadores consolidados de cada PPG, filtros interativos para emissão de relatórios personalizados, estatísticas relacionadas aos prazos de defesa, além de exibição de listagem de estudantes com prazos vencidos ou próximos do vencimento. As informações referentes a novos ingressantes, alterações de situação acadêmica, datas de defesa e homologação são atualizadas diariamente. Já os dados relativos a prazos de vencimento são atualizados quinzenalmente, em razão da menor necessidade de atualização contínua.",
       "Badge": "",
-      "Link": "https://script.google.com/a/macros/unifesp.br/s/AKfycbyf6Hl4x91yWK-gkdGPm6UKe1cIw6RpVymqLczZZwK5GM40zTqDkmFMRoxochxWsWQCQg/exec",
-      "LinkLabel": "Visualizar Painel de BI →"
+      "Link": "https://drive.google.com/file/d/1qhr0j-36xVdG99Q_nPWl3LakHWDXFOj_/view?usp=drive_link; https://drive.google.com/file/d/1g-saHVX00Xj7dxWSi7gymk3E4chSx_0V/view?usp=drive_link; https://drive.google.com/file/d/1MDryXyr657LxIg_icsFmyUZ_XKJegETX/view?usp=drive_link",
+      "LinkLabel": ""
     }
   ]
 }
