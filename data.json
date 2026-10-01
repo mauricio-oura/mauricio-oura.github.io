@@ -313,7 +313,7 @@
     {
       "ID": "dados-estudantes",
       "Titulo": "Painel de Dados de Estudantes e Pós-Doutorandos de Programas de Pós-Graduação",
-      "Tech": "<i class='fas fa-spider'></i> Scraping + Python",
+      "Tech": "<i class='fas fa-spider'></i> Scraping + Python\n<i class='fas fa-file-code'></i> Google Apps Script",
       "Data": "dez./2024",
       "Cor": "",
       "Desafio": "Automatizar a consolidação e divulgação de informações estratégicas para secretarias, coordenações de Programas de Pós-Graduação e orientadores.",
